@@ -19,7 +19,8 @@
 body {
   /* color: rgb(var(--foreground-rgb)); */
   color: black;
-  background: rgba(255, 97, 165, 0.39);
+  /* background: rgba(255, 97, 165, 0.39); */
+  background: #ade8f4;
 }
 
 @layer utilities {
