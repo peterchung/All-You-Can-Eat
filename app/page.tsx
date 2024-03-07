@@ -81,10 +81,10 @@ export default function Home() {
             height='668'
           />
         </div>
-        <div className='flex flex-col justify-center max-w-2xl'>
-          <h1 className='text-5xl font-bold'>The Hosts</h1>
-          <h2 className='text-4xl font-bold'>Peter Chung</h2>
-          <span className='bg-white text-2xl leading-normal text-justify'>
+        <div className='flex flex-col justify-center items-center max-w-2xl'>
+          <h1 className='text-5xl font-bold my-10'>The Hosts</h1>
+          <h2 className='text-4xl font-bold text-hostTitle'>Peter Chung</h2>
+          <span className='bg-white text-2xl leading-normal text-justify my-5'>
             Peter is the best Peter is the best Peter is the best Peter is the
             best Peter is the best Peter is the best Peter is the best Peter is
             the best Peter is the best Peter is the best Peter is the best Peter
@@ -93,8 +93,8 @@ export default function Home() {
             best Peter is the best Peter is the best Peter is the best Peter is
             the best.
           </span>
-          <h2 className='text-4xl font-bold'>Sora Ko</h2>
-          <span className='bg-white text-2xl leading-normal text-justify'>
+          <h2 className='text-4xl font-bold text-hostTitle'>Sora Ko</h2>
+          <span className='bg-white text-2xl leading-normal text-justify my-5'>
             Sora is the worst Sora is the worst Sora is the worst Sora is the
             worst Sora is the worst Sora is the worst Sora is the worst Sora is
             the worst Sora is the worst Sora is the worst Sora is the worst Sora

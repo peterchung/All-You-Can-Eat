@@ -15,6 +15,7 @@ const config: Config = {
       },
       colors: {
         primary: 'rgba(255, 97, 165, 0.39)',
+        hostTitle: 'rgb(0, 139, 248)',
       },
     },
   },
