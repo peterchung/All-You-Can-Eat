@@ -21,6 +21,7 @@ body {
   color: black;
   /* background: rgba(255, 97, 165, 0.39); */
   background: #ade8f4;
+  font-family: arial;
 }
 
 @layer utilities {

@@ -73,48 +73,66 @@ export default function Home() {
       </div>
 
       <div className='flex justify-evenly'>
-        <div>
+        <div className='relative flex-grow'>
           <Image
             src='/images/theHostsLeft.JPG'
             alt='Peter image'
-            width='243'
-            height='668'
+            layout='fill'
+            objectFit='cover'
+            className='opacity-95'
           />
         </div>
-        <div className='flex flex-col justify-center items-center'>
-          <h1 className='text-5xl font-bold my-10'>The Hosts</h1>
-          <h2 className='text-4xl font-bold text-hostTitle'>Peter Chung</h2>
-          <div className='text-justify max-w-2xl my-5'>
-            <span className='bg-white text-2xl leading-normal'>
-              Peter is the best Peter is the best Peter is the best Peter is the
-              best Peter is the best Peter is the best Peter is the best Peter
-              is the best Peter is the best Peter is the best Peter is the best
-              Peter is the best Peter is the best Peter is the best Peter is the
-              best Peter is the best Peter is the best Peter is the best Peter
-              is the best Peter is the best Peter is the best Peter is the best
-              Peter is the best.
-            </span>
+        <div className='flex flex-col justify-center items-center relative'>
+          <div className='absolute inset-0 z-0'>
+            <Image
+              src='/images/host-bio-background.png'
+              alt='host background image'
+              layout='fill'
+              objectFit='cover'
+              className='opacity-15'
+            />
           </div>
 
-          <h2 className='text-4xl font-bold text-hostTitle'>Sora Ko</h2>
-          <div className='text-justify max-w-2xl my-5'>
-            <span className='bg-white text-2xl leading-normal'>
-              Sora is the worst Sora is the worst Sora is the worst Sora is the
-              worst Sora is the worst Sora is the worst Sora is the worst Sora
-              is the worst Sora is the worst Sora is the worst Sora is the worst
-              Sora is the worst Sora is the worst Sora is the worst Sora is the
-              worst Sora is the worst Sora is the worst Sora is the worst Sora
-              is the worst Sora is the worst Sora is the worst Sora is the worst
-              Sora is the worst Sora is the worst Sora is the worst.
-            </span>
+          <h1 className='text-8xl font-bold my-10'>The Hosts</h1>
+
+          <div className='flex flex-col items-center'>
+            <h2 className='text-6xl font-bold text-hostTitle'>Peter Chung</h2>
+            <div className='text-justify max-w-2xl m-5'>
+              <span className='bg-white text-2xl leading-normal'>
+                Peter is the best Peter is the best Peter is the best Peter is
+                the best Peter is the best Peter is the best Peter is the best
+                Peter is the best Peter is the best Peter is the best Peter is
+                the best Peter is the best Peter is the best Peter is the best
+                Peter is the best Peter is the best Peter is the best Peter is
+                the best Peter is the best Peter is the best Peter is the best
+                Peter is the best Peter is the best.
+              </span>
+            </div>
+          </div>
+
+          <div className='flex flex-col items-center mt-20'>
+            <h2 className='text-6xl font-bold text-hostTitle'>Sora Ko</h2>
+            <div className='text-justify max-w-2xl m-5'>
+              <span className='bg-white text-2xl leading-normal'>
+                Sora is the worst Sora is the worst Sora is the worst Sora is
+                the worst Sora is the worst Sora is the worst Sora is the worst
+                Sora is the worst Sora is the worst Sora is the worst Sora is
+                the worst Sora is the worst Sora is the worst Sora is the worst
+                Sora is the worst Sora is the worst Sora is the worst Sora is
+                the worst Sora is the worst Sora is the worst Sora is the worst
+                Sora is the worst Sora is the worst Sora is the worst Sora is
+                the worst.
+              </span>
+            </div>
           </div>
         </div>
-        <div>
+        <div className='relative flex-grow'>
           <Image
             src='/images/theHostsRight.JPG'
             alt='Sora image'
-            width='243'
-            height='668'
+            layout='fill'
+            objectFit='cover'
+            className='opacity-95'
           />
         </div>
       </div>
