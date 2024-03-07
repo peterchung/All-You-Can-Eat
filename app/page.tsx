@@ -81,28 +81,33 @@ export default function Home() {
             height='668'
           />
         </div>
-        <div className='flex flex-col justify-center items-center max-w-2xl'>
+        <div className='flex flex-col justify-center items-center'>
           <h1 className='text-5xl font-bold my-10'>The Hosts</h1>
           <h2 className='text-4xl font-bold text-hostTitle'>Peter Chung</h2>
-          <span className='bg-white text-2xl leading-normal text-justify my-5'>
-            Peter is the best Peter is the best Peter is the best Peter is the
-            best Peter is the best Peter is the best Peter is the best Peter is
-            the best Peter is the best Peter is the best Peter is the best Peter
-            is the best Peter is the best Peter is the best Peter is the best
-            Peter is the best Peter is the best Peter is the best Peter is the
-            best Peter is the best Peter is the best Peter is the best Peter is
-            the best.
-          </span>
+          <div className='text-justify max-w-2xl my-5'>
+            <span className='bg-white text-2xl leading-normal'>
+              Peter is the best Peter is the best Peter is the best Peter is the
+              best Peter is the best Peter is the best Peter is the best Peter
+              is the best Peter is the best Peter is the best Peter is the best
+              Peter is the best Peter is the best Peter is the best Peter is the
+              best Peter is the best Peter is the best Peter is the best Peter
+              is the best Peter is the best Peter is the best Peter is the best
+              Peter is the best.
+            </span>
+          </div>
+
           <h2 className='text-4xl font-bold text-hostTitle'>Sora Ko</h2>
-          <span className='bg-white text-2xl leading-normal text-justify my-5'>
-            Sora is the worst Sora is the worst Sora is the worst Sora is the
-            worst Sora is the worst Sora is the worst Sora is the worst Sora is
-            the worst Sora is the worst Sora is the worst Sora is the worst Sora
-            is the worst Sora is the worst Sora is the worst Sora is the worst
-            Sora is the worst Sora is the worst Sora is the worst Sora is the
-            worst Sora is the worst Sora is the worst Sora is the worst Sora is
-            the worst Sora is the worst Sora is the worst.
-          </span>
+          <div className='text-justify max-w-2xl my-5'>
+            <span className='bg-white text-2xl leading-normal'>
+              Sora is the worst Sora is the worst Sora is the worst Sora is the
+              worst Sora is the worst Sora is the worst Sora is the worst Sora
+              is the worst Sora is the worst Sora is the worst Sora is the worst
+              Sora is the worst Sora is the worst Sora is the worst Sora is the
+              worst Sora is the worst Sora is the worst Sora is the worst Sora
+              is the worst Sora is the worst Sora is the worst Sora is the worst
+              Sora is the worst Sora is the worst Sora is the worst.
+            </span>
+          </div>
         </div>
         <div>
           <Image
