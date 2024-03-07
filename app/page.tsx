@@ -136,6 +136,18 @@ export default function Home() {
           />
         </div>
       </div>
+
+      <div className='flex flex-col items-center my-20 border-8 max-w-2xl'>
+        <div className=''>
+          <h1 className=''>
+            <span className='text-5xl bg-white text-hostTitle'>
+              Take a look at...
+            </span>
+          </h1>
+        </div>
+
+        <h1 className='text-7xl font-bold my-5'>Our latest podcast</h1>
+      </div>
     </main>
   );
 }
