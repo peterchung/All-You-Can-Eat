@@ -137,16 +137,24 @@ export default function Home() {
         </div>
       </div>
 
-      <div className='flex flex-col items-center my-20 border-8 max-w-2xl'>
-        <div className=''>
+      <div className='flex flex-col items-center'>
+        <div className='items-start mt-20 mb-5 border-8 max-w-2xl'>
           <h1 className=''>
-            <span className='text-5xl bg-white text-hostTitle'>
+            <span className='text-3xl bg-white text-hostTitle'>
               Take a look at...
             </span>
           </h1>
+          <h1 className='text-5xl font-bold my-5'>Our latest Podcast.</h1>
+          <iframe
+            width='575'
+            height='315'
+            src='https://www.youtube.com/embed/IiGCngEupFw?si=_1-ZF3Kv6PpS28xu'
+            title='YouTube video player'
+            frameborder='0'
+            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+            allowfullscreen
+          ></iframe>
         </div>
-
-        <h1 className='text-7xl font-bold my-5'>Our latest podcast</h1>
       </div>
     </main>
   );
