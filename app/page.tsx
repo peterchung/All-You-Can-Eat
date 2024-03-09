@@ -6,7 +6,7 @@ export default function Home() {
       <section className='flex flex-col h-screen'>
         {/* navbar */}
 
-        <div className='fixed top-0 w-full'>
+        <div className='fixed top-0 w-full z-50'>
           <nav className='flex justify-between items-center m-5'>
             <div className=''>
               <Image
