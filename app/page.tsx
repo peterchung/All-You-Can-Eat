@@ -56,7 +56,9 @@ export default function Home() {
       <section className='podcast-about h-screen'>
         <div className='flex justify-between m-10'>
           <div className='w-1/2'>
-            <h1 className='text-8xl font-bold'>What is All You Can Eat?</h1>
+            <h1 className='text-8xl font-bold uppercase'>
+              What is All You Can Eat?
+            </h1>
           </div>
           <div className='w-1/2 text-2xl text-justify mx-5 uppercase'>
             <p>
