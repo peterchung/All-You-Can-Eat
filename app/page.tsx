@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <main>
-      <section className='flex flex-col h-screen'>
+      <section className='landing-page flex flex-col h-screen'>
         {/* navbar */}
 
         <div className='fixed top-0 w-full z-50'>
@@ -35,33 +35,6 @@ export default function Home() {
             </div>
           </nav>
         </div>
-        {/* <nav className='flex justify-between items-center m-5'>
-          <div className=''>
-            <Image
-              src='/images/AYCE-Logo.png'
-              alt='AYCE logo'
-              width='150'
-              height='143'
-            />
-          </div>
-          <div className='flex space-x-4 font-bold'>
-            <div>
-              <a>THE HOSTS</a>
-            </div>
-            <div>
-              <a>LISTEN</a>
-            </div>
-            <div>
-              <a>SHOP</a>
-            </div>
-            <div>
-              <a>MEETUPS</a>
-            </div>
-            <div>
-              <a>CONTACT</a>
-            </div>
-          </div>
-        </nav> */}
 
         <div className='flex-grow'>Placeholder content to fill the space</div>
 
@@ -77,6 +50,57 @@ export default function Home() {
               </button>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className='podcast-about h-screen'>
+        <div className='flex justify-between m-10'>
+          <div className='w-1/2'>
+            <h1 className='text-8xl font-bold'>What is All You Can Eat?</h1>
+          </div>
+          <div className='w-1/2 text-2xl text-justify mx-5 uppercase'>
+            <p>
+              {' '}
+              we explore and share our Asian American experiences. We created
+              this space to share our different opinions in a mostly
+              lighthearted way. The Asian American come up can be so comparable
+              yet at the same time so unique - same same but different*. We
+              encourage open dialogue and finding comfort over shared
+              experiences or discovering new ones. Have your fill however you
+              want. This is All You Can Eat.
+            </p>
+          </div>
+        </div>
+
+        <div className='flex justify-evenly'>
+          <Image
+            src='/images/art.png'
+            alt='hokusai wave art'
+            width='243'
+            height='211'
+            className='m-4'
+          />
+          <Image
+            src='/images/popculture.png'
+            alt='blackpink culture'
+            width='243'
+            height='211'
+            className='m-4'
+          />
+          <Image
+            src='/images/food.png'
+            alt='blackpink culture'
+            width='243'
+            height='211'
+            className='my-4'
+          />
+          <Image
+            src='/images/history.png'
+            alt='blackpink culture'
+            width='243'
+            height='211'
+            className='my-4'
+          />
         </div>
       </section>
 
