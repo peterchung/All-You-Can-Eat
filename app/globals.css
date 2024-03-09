@@ -18,9 +18,9 @@
 
 body {
   /* color: rgb(var(--foreground-rgb)); */
-  color: black;
+  color: white;
   /* background: rgba(255, 97, 165, 0.39); */
-  background: #ade8f4;
+  background: #f0c7d7;
   font-family: arial;
 }
 

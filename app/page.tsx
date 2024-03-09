@@ -3,30 +3,45 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <main>
-      <div className='flex justify-between items-center m-5'>
-        <div>
-          <Image
-            src='/images/AYCE-Logo.png'
-            alt='AYCE logo'
-            width='150'
-            height='143'
-          />
+      <section>
+        {/* navbar */}
+        <div className='flex justify-between items-center m-5'>
+          <div>
+            <Image
+              src='/images/AYCE-Logo.png'
+              alt='AYCE logo'
+              width='150'
+              height='143'
+            />
+          </div>
+          <nav className='flex space-x-4 font-bold'>
+            <div>
+              <a>THE HOSTS</a>
+            </div>
+            <div>
+              <a>LISTEN</a>
+            </div>
+            <div>
+              <a>SHOP</a>
+            </div>
+            <div>
+              <a>CONTACT</a>
+            </div>
+          </nav>
         </div>
-        <nav className='flex space-x-4'>
-          <div>
-            <a>THE HOSTS</a>
+
+        {/* podcast about one liner */}
+        <div>
+          <div className='font-bold text-white my-5'>
+            <h1>
+              TWO ASIANS NOT FROM ASIA EXPLORING ASIAN AMERICAN-ISH EXPERIENCES
+            </h1>
           </div>
-          <div>
-            <a>LISTEN</a>
-          </div>
-          <div>
-            <a>SHOP</a>
-          </div>
-          <div>
-            <a>CONTACT</a>
-          </div>
-        </nav>
-      </div>
+          <button className='bg-gray-200 hover:opacity-50 font-bold text-black py-4 px-6 rounded-full'>
+            LISTEN NOW
+          </button>
+        </div>
+      </section>
 
       <div className='flex justify-center mt-10 bg-primary'>
         <div className='p-5 flex flex-col'>
