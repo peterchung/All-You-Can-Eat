@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <main>
-      <section>
+      <section className='flex flex-col justify-between h-screen'>
         {/* navbar */}
         <div className='flex justify-between items-center m-5'>
           <div>
@@ -25,21 +25,26 @@ export default function Home() {
               <a>SHOP</a>
             </div>
             <div>
+              <a>MEETUPS</a>
+            </div>
+            <div>
               <a>CONTACT</a>
             </div>
           </nav>
         </div>
 
         {/* podcast about one liner */}
-        <div>
-          <div className='font-bold text-white my-5'>
-            <h1>
-              TWO ASIANS NOT FROM ASIA EXPLORING ASIAN AMERICAN-ISH EXPERIENCES
-            </h1>
+        <div className='flex justify-center items-end mb-20'>
+          <div className='mx-auto max-w-6xl'>
+            <div className='font-bold text-white text-5xl my-10'>
+              <h1>TWO ASIANS EXPLORING ASIAN AMERICAN-ISH EXPERIENCES</h1>
+            </div>
+            <div>
+              <button className='bg-gray-200 hover:opacity-50 font-bold text-black py-4 px-6 rounded-full'>
+                LISTEN NOW
+              </button>
+            </div>
           </div>
-          <button className='bg-gray-200 hover:opacity-50 font-bold text-black py-4 px-6 rounded-full'>
-            LISTEN NOW
-          </button>
         </div>
       </section>
 
