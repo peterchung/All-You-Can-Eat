@@ -3,10 +3,40 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <main>
-      <section className='flex flex-col justify-between h-screen'>
+      <section className='flex flex-col h-screen'>
         {/* navbar */}
-        <div className='flex justify-between items-center m-5'>
-          <div>
+
+        <div className='fixed top-0 w-full'>
+          <nav className='flex justify-between items-center m-5'>
+            <div className=''>
+              <Image
+                src='/images/AYCE-Logo.png'
+                alt='AYCE logo'
+                width='150'
+                height='143'
+              />
+            </div>
+            <div className='flex space-x-4 font-bold'>
+              <div>
+                <a>THE HOSTS</a>
+              </div>
+              <div>
+                <a>LISTEN</a>
+              </div>
+              <div>
+                <a>SHOP</a>
+              </div>
+              <div>
+                <a>MEETUPS</a>
+              </div>
+              <div>
+                <a>CONTACT</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+        {/* <nav className='flex justify-between items-center m-5'>
+          <div className=''>
             <Image
               src='/images/AYCE-Logo.png'
               alt='AYCE logo'
@@ -14,7 +44,7 @@ export default function Home() {
               height='143'
             />
           </div>
-          <nav className='flex space-x-4 font-bold'>
+          <div className='flex space-x-4 font-bold'>
             <div>
               <a>THE HOSTS</a>
             </div>
@@ -30,8 +60,10 @@ export default function Home() {
             <div>
               <a>CONTACT</a>
             </div>
-          </nav>
-        </div>
+          </div>
+        </nav> */}
+
+        <div className='flex-grow'>Placeholder content to fill the space</div>
 
         {/* podcast about one liner */}
         <div className='flex justify-center items-end mb-20'>
