@@ -74,7 +74,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className='flex justify-evenly'>
+        <div className='flex justify-evenly my-28'>
           <Image
             src='/images/art.png'
             alt='hokusai wave art'
