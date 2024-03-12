@@ -123,9 +123,33 @@ export default function Home() {
         <div className='flex flex-col items-center mb-20'>
           <h2 className='text-6xl font-bold uppercase my-10'>listen now on</h2>
           <div className='flex justify-between w-3/4'>
-            <div className='text-3xl font-bold uppercase'>spotify</div>
-            <div className='text-3xl font-bold uppercase'>youtube</div>
-            <div className='text-3xl font-bold uppercase'>apple</div>
+            <div className='flex flex-col items-center'>
+              <div className='text-3xl font-bold uppercase'>spotify</div>
+              <Image
+                src='/images/spotify-logo.png'
+                alt='spotify-logo'
+                width='50'
+                height='50'
+              />
+            </div>
+            <div className='flex flex-col items-center'>
+              <div className='text-3xl font-bold uppercase'>youtube</div>
+              <Image
+                src='/images/youtube-logo.png'
+                alt='youtube-logo'
+                width='50'
+                height='50'
+              />
+            </div>
+            <div className='flex flex-col items-center'>
+              <div className='text-3xl font-bold uppercase'>apple</div>
+              <Image
+                src='/images/apple-podcast-logo.png'
+                alt='apple-logo'
+                width='50'
+                height='50'
+              />
+            </div>
           </div>
         </div>
         {/* </div> */}
