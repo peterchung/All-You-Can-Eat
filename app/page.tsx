@@ -53,8 +53,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className='podcast-about h-screen'>
-        <div className='flex justify-between m-10'>
+      <section className='podcast-about flex flex-col justify-between h-screen border-2'>
+        <div className='flex justify-between mx-10 mt-28'>
           <div className='w-1/2'>
             <h1 className='text-8xl font-bold uppercase'>
               What is All You Can Eat?
@@ -104,6 +104,31 @@ export default function Home() {
             className='my-4'
           />
         </div>
+      </section>
+
+      <section className='welcome-and-listen flex flex-col h-screen border-2'>
+        {/* <div className='flex flex-col'> */}
+        <div className='flex justify-center text-7xl font-bold uppercase my-10'>
+          <h1>welcome to all you can eat</h1>
+        </div>
+        <div
+          className='flex-grow relative overflow-hidden'
+          style={{ maxHeight: '400px' }}
+        >
+          <div
+            className='absolute inset-0 bg-cover bg-center bg-fixed'
+            style={{ backgroundImage: 'url("/images/parallax-temp.png")' }}
+          ></div>
+        </div>
+        <div className='flex flex-col items-center mb-20'>
+          <h2 className='text-6xl font-bold uppercase my-10'>listen now on</h2>
+          <div className='flex justify-between w-3/4'>
+            <div className='text-3xl font-bold uppercase'>spotify</div>
+            <div className='text-3xl font-bold uppercase'>youtube</div>
+            <div className='text-3xl font-bold uppercase'>apple</div>
+          </div>
+        </div>
+        {/* </div> */}
       </section>
 
       <div className='flex justify-center mt-10 bg-primary'>
