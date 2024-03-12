@@ -36,10 +36,17 @@ export default function Home() {
           </nav>
         </div>
 
-        <div className='flex-grow'>Placeholder content to fill the space</div>
+        <div className='flex-grow'>
+          <div
+            className='absolute inset-0 bg-cover bg-center'
+            style={{
+              backgroundImage: 'url("/images/landing-image-temp2.png")',
+            }}
+          ></div>
+        </div>
 
         {/* podcast about one liner */}
-        <div className='flex justify-center items-end mb-20'>
+        <div className='flex justify-center items-end mb-20 z-10'>
           <div className='mx-auto max-w-6xl'>
             <div className='font-bold text-white text-5xl my-10'>
               <h1>TWO ASIANS EXPLORING ASIAN AMERICAN-ISH EXPERIENCES</h1>
