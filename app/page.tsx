@@ -4,49 +4,15 @@ export default function Home() {
   return (
     <main>
       <section className='landing-page flex flex-col h-screen'>
-        {/* navbar */}
-
-        <div className='fixed top-0 w-full z-50'>
-          <nav className='flex justify-between items-center m-5'>
-            <div className=''>
-              <Image
-                src='/images/AYCE-Logo.png'
-                alt='AYCE logo'
-                width='150'
-                height='143'
-              />
-            </div>
-            <div className='flex space-x-4 font-bold'>
-              <div>
-                <a>THE HOSTS</a>
-              </div>
-              <div>
-                <a>LISTEN</a>
-              </div>
-              <div>
-                <a>SHOP</a>
-              </div>
-              <div>
-                <a>MEETUPS</a>
-              </div>
-              <div>
-                <a>CONTACT</a>
-              </div>
-            </div>
-          </nav>
-        </div>
-
         <div className='flex-grow'>
           <div
             className='absolute inset-0 bg-cover bg-center'
             style={{
-              backgroundImage: 'url("/images/landing-image-temp2.png")',
+              backgroundImage: 'url("/images/landing-image-temp.png")',
             }}
           ></div>
         </div>
-
-        {/* podcast about one liner */}
-        <div className='flex justify-center items-end mb-20 z-10'>
+        <div className='mb-20 z-10'>
           <div className='mx-auto max-w-6xl'>
             <div className='font-bold text-white text-5xl my-10'>
               <h1>TWO ASIANS EXPLORING ASIAN AMERICAN-ISH EXPERIENCES</h1>
@@ -114,7 +80,6 @@ export default function Home() {
       </section>
 
       <section className='welcome-and-listen flex flex-col h-screen border-2'>
-        {/* <div className='flex flex-col'> */}
         <div className='flex justify-center text-7xl font-bold uppercase my-10'>
           <h1>welcome to all you can eat</h1>
         </div>
@@ -159,10 +124,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-        {/* </div> */}
       </section>
 
-      <div className='flex justify-center mt-10 bg-primary'>
+      {/* <div className='flex justify-center mt-10 bg-primary'>
         <div className='p-5 flex flex-col'>
           <h1 className='text-5xl font-bold'>What is All You Can Eat?</h1>
           <div className='text-justify max-w-2xl'>
@@ -316,7 +280,7 @@ export default function Home() {
             className='m-4'
           />
         </div>
-      </div>
+      </div> */}
     </main>
   );
 }
