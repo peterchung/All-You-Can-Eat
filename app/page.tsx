@@ -126,6 +126,31 @@ export default function Home() {
         </div>
       </section>
 
+      <section>
+        <div className='flex justify-evenly p-12'>
+          <div className='w-1/2 relative'>
+            <Image
+              src='/images/host-left.jpeg'
+              alt='left-host'
+              width={0}
+              height={0}
+              sizes='100vw'
+              style={{ width: '100%', height: 'auto' }}
+            />
+          </div>
+          <div className='w-1/2 ml-12'>
+            <Image
+              src='/images/host-right.jpeg'
+              alt='right-host'
+              width={0}
+              height={0}
+              sizes='100vw'
+              style={{ width: '100%', height: 'auto' }}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* <div className='flex justify-center mt-10 bg-primary'>
         <div className='p-5 flex flex-col'>
           <h1 className='text-5xl font-bold'>What is All You Can Eat?</h1>
