@@ -126,9 +126,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
-        <div className='flex justify-evenly p-12'>
-          <div className='w-1/2 relative'>
+      <section className='host-pics'>
+        <div className='flex justify-between p-[50px]'>
+          <div className='w-1/2'>
             <Image
               src='/images/host-left.jpeg'
               alt='left-host'
@@ -136,9 +136,11 @@ export default function Home() {
               height={0}
               sizes='100vw'
               style={{ width: '100%', height: 'auto' }}
+              // fill
+              // style={{ objectFit: 'cover' }}
             />
           </div>
-          <div className='w-1/2 ml-12'>
+          <div className='w-1/2'>
             <Image
               src='/images/host-right.jpeg'
               alt='right-host'
