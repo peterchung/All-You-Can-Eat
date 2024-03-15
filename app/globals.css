@@ -28,4 +28,10 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  /* .text-extra-large {
+    font-size: 10rem;
+  }
+  .text-extra-medium {
+    font-size: 6rem;
+  } */
 }
