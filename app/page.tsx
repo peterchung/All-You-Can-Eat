@@ -99,7 +99,7 @@ export default function Home() {
               <div className='text-3xl font-bold uppercase'>spotify</div>
               <Image
                 src='/images/spotify-logo.png'
-                alt='spotify-logo'
+                alt='spotify'
                 width='50'
                 height='50'
               />
@@ -108,7 +108,7 @@ export default function Home() {
               <div className='text-3xl font-bold uppercase'>youtube</div>
               <Image
                 src='/images/youtube-logo.png'
-                alt='youtube-logo'
+                alt='youtube'
                 width='50'
                 height='50'
               />
@@ -117,7 +117,7 @@ export default function Home() {
               <div className='text-3xl font-bold uppercase'>apple</div>
               <Image
                 src='/images/apple-podcast-logo.png'
-                alt='apple-logo'
+                alt='apple podcast'
                 width='50'
                 height='50'
               />
