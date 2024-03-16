@@ -2,9 +2,9 @@
 
 import { useRef, useLayoutEffect } from 'react';
 
-const Footer = () => {
-  const text1Ref = useRef(null);
-  const text2Ref = useRef(null);
+const Footer = (): JSX.Element => {
+  const text1Ref = useRef<HTMLParagraphElement | null>(null);
+  const text2Ref = useRef<HTMLParagraphElement | null>(null);
 
   useLayoutEffect(() => {
     const updateTextWidth = () => {
@@ -27,7 +27,7 @@ const Footer = () => {
     window.addEventListener('resize', updateTextWidth);
 
     // Remove event listener on cleanup
-    return () => {
+    return (): void => {
       window.removeEventListener('resize', updateTextWidth);
     };
   }, []); // Empty dependency array ensures this runs on mount and unmount only
