@@ -2,14 +2,19 @@
 
 import { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { handleSubmit } from '@/utils/actions';
 
 const Contact = () => {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const processForm = (data) => console.log(data);
 
   return (
     <div className='contact-form-wrapper mt-40 mb-20 flex flex-col items-center'>
-      <form>
+      <form onSubmit={handleSubmit(processForm)}>
         <fieldset className='item-field flex gap-x-2.5 mb-4'>
           <legend className='pb-1'>
             <div className='flex gap-x-2'>
@@ -18,58 +23,94 @@ const Contact = () => {
             </div>
           </legend>
           <div className='first-name-wrapper flex flex-col'>
-            <label>First Name</label>
+            <label
+              className={`${errors.firstName ? 'text-red-500' : 'text-white'}`}
+            >
+              First Name
+            </label>
             <input
               {...register('firstName', { required: true, minLength: 2 })}
               type='text'
-              className='first-name p-2.5 text-black'
+              className={`p-2.5 text-black ${
+                errors.firstName ? 'border border-red-500' : ''
+              }`}
             />
           </div>
           <div className='last-name-wrapper flex flex-col'>
-            <label>Last Name</label>
+            <label
+              className={`${errors.lastName ? 'text-red-500' : 'text-white'}`}
+            >
+              Last Name
+            </label>
             <input
               {...register('lastName', { required: true, minLength: 2 })}
               type='text'
-              className='last-name p-2.5 text-black'
+              className={`p-2.5 text-black ${
+                errors.lastName ? 'border border-red-500' : ''
+              }`}
             />
           </div>
         </fieldset>
         <fieldset className='item-field flex gap-x-2.5 mb-4'>
           <legend className='pb-1'>
             <label className='flex gap-x-2'>
-              <span className='text-lg font-medium'>Email Address</span>
-              <span className='text-lg'>(required)</span>
+              <span
+                className={`text-lg font-medium ${
+                  errors.email ? 'text-red-500' : 'text-white'
+                }`}
+              >
+                Email Address (required)
+              </span>
+              {/* <span className='text-lg'>(required)</span> */}
             </label>
           </legend>
           <input
             {...register('email', { required: true, minLength: 4 })}
             type='email'
-            className='email p-2.5 w-full text-black'
+            className={`p-2.5 w-full text-black ${
+              errors.email ? 'border border-red-500' : ''
+            }`}
           />
         </fieldset>
         <fieldset className='item-field flex gap-x-2.5 mb-4'>
           <legend className='pb-1'>
             <label className='flex gap-x-2'>
-              <span className='text-lg font-medium'>Subject</span>
-              <span className='text-lg'>(required)</span>
+              <span
+                className={`text-lg font-medium ${
+                  errors.subject ? 'text-red-500' : 'text-white'
+                }`}
+              >
+                Subject (required)
+              </span>
+              {/* <span className='text-lg'>(required)</span> */}
             </label>
           </legend>
           <input
             {...register('subject', { required: true, minLength: 3 })}
             type='text'
-            className='subject p-2.5 w-full text-black'
+            className={`subject p-2.5 w-full text-black ${
+              errors.subject ? 'border border-red-500' : ''
+            }`}
           />
         </fieldset>
         <fieldset className='item-field flex gap-x-2.5 mb-4'>
           <legend className='pb-1'>
             <label className='flex gap-x-2'>
-              <span className='text-lg font-medium'>Message</span>
-              <span className='text-lg'>(required)</span>
+              <span
+                className={`text-lg font-medium ${
+                  errors.message ? 'text-red-500' : 'text-white'
+                }`}
+              >
+                Message (required)
+              </span>
+              {/* <span className='text-lg'>(required)</span> */}
             </label>
           </legend>
           <textarea
             {...register('message', { required: true, minLength: 4 })}
-            className='message p-2.5 w-full text-black h-32'
+            className={`p-2.5 w-full text-black h-32 ${
+              errors.message ? 'border border-red-500' : ''
+            }`}
           ></textarea>
         </fieldset>
         <button
