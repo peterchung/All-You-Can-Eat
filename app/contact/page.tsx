@@ -11,6 +11,7 @@ const Contact = () => {
   } = useForm();
 
   const processForm = (data) => console.log(data);
+  console.log(errors);
 
   return (
     <div className='contact-form-wrapper mt-40 mb-20 flex flex-col items-center'>
@@ -28,13 +29,22 @@ const Contact = () => {
             >
               First Name
             </label>
-            <input
-              {...register('firstName', { required: true, minLength: 2 })}
-              type='text'
-              className={`p-2.5 text-black ${
-                errors.firstName ? 'border border-red-500' : ''
-              }`}
-            />
+            <div className='firstName-input w-full flex flex-col'>
+              <input
+                {...register('firstName', {
+                  required: 'First name is required',
+                })}
+                type='text'
+                className={`firstName p-2.5 text-black ${
+                  errors.firstName ? 'border border-red-500' : ''
+                }`}
+              />
+              {errors.firstName?.message && (
+                <span className='text-sm text-red-500'>
+                  {errors.firstName.message}
+                </span>
+              )}
+            </div>
           </div>
           <div className='last-name-wrapper flex flex-col'>
             <label
@@ -42,13 +52,20 @@ const Contact = () => {
             >
               Last Name
             </label>
-            <input
-              {...register('lastName', { required: true, minLength: 2 })}
-              type='text'
-              className={`p-2.5 text-black ${
-                errors.lastName ? 'border border-red-500' : ''
-              }`}
-            />
+            <div className='w-full flex flex-col'>
+              <input
+                {...register('lastName', { required: 'Last name is required' })}
+                type='text'
+                className={`lastName p-2.5 text-black ${
+                  errors.lastName ? 'border border-red-500' : ''
+                }`}
+              />
+              {errors.lastName?.message && (
+                <span className='text-sm text-red-500'>
+                  {errors.lastName.message}
+                </span>
+              )}
+            </div>
           </div>
         </fieldset>
         <fieldset className='item-field flex gap-x-2.5 mb-4'>
@@ -61,16 +78,28 @@ const Contact = () => {
               >
                 Email Address (required)
               </span>
-              {/* <span className='text-lg'>(required)</span> */}
             </label>
           </legend>
-          <input
-            {...register('email', { required: true, minLength: 4 })}
-            type='email'
-            className={`p-2.5 w-full text-black ${
-              errors.email ? 'border border-red-500' : ''
-            }`}
-          />
+          <div className='w-full flex flex-col'>
+            <input
+              {...register('email', {
+                required: true,
+                pattern: {
+                  value: /\S+@\S+\.\S+/,
+                  message: 'Valid email format is required',
+                },
+              })}
+              type='text'
+              className={`email p-2.5 w-full text-black ${
+                errors.email ? 'border border-red-500' : ''
+              }`}
+            />
+            {errors.email?.message && (
+              <span className='text-sm text-red-500'>
+                {errors.email.message}
+              </span>
+            )}
+          </div>
         </fieldset>
         <fieldset className='item-field flex gap-x-2.5 mb-4'>
           <legend className='pb-1'>
@@ -82,16 +111,28 @@ const Contact = () => {
               >
                 Subject (required)
               </span>
-              {/* <span className='text-lg'>(required)</span> */}
             </label>
           </legend>
-          <input
-            {...register('subject', { required: true, minLength: 3 })}
-            type='text'
-            className={`subject p-2.5 w-full text-black ${
-              errors.subject ? 'border border-red-500' : ''
-            }`}
-          />
+          <div className='w-full flex flex-col'>
+            <input
+              {...register('subject', {
+                required: true,
+                minLength: {
+                  value: 2,
+                  message: 'Subject must be at least 2 characters',
+                },
+              })}
+              type='text'
+              className={`subject p-2.5 w-full text-black ${
+                errors.subject ? 'border border-red-500' : ''
+              }`}
+            />
+            {errors.subject?.message && (
+              <span className='text-sm text-red-500'>
+                {errors.subject.message}
+              </span>
+            )}
+          </div>
         </fieldset>
         <fieldset className='item-field flex gap-x-2.5 mb-4'>
           <legend className='pb-1'>
@@ -103,15 +144,27 @@ const Contact = () => {
               >
                 Message (required)
               </span>
-              {/* <span className='text-lg'>(required)</span> */}
             </label>
           </legend>
-          <textarea
-            {...register('message', { required: true, minLength: 4 })}
-            className={`p-2.5 w-full text-black h-32 ${
-              errors.message ? 'border border-red-500' : ''
-            }`}
-          ></textarea>
+          <div className='w-full flex flex-col'>
+            <textarea
+              {...register('message', {
+                required: true,
+                minLength: {
+                  value: 4,
+                  message: 'Message must be at least 4 characters',
+                },
+              })}
+              className={`message p-2.5 w-full text-black h-32 ${
+                errors.message ? 'border border-red-500' : ''
+              }`}
+            ></textarea>
+            {errors.message?.message && (
+              <span className='text-sm text-red-500'>
+                {errors.message.message}
+              </span>
+            )}
+          </div>
         </fieldset>
         <button
           type='submit'
@@ -120,7 +173,6 @@ const Contact = () => {
           Submit
         </button>
       </form>
-      {/* <div>{JSON.stringify(state, null, 2)}</div> */}
     </div>
   );
 };
