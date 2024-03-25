@@ -4,6 +4,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { formType } from '../types';
 import { formSchema } from '@/lib/schema';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { sendForm } from '@/utils/actions';
 
 const Contact = () => {
   const {
@@ -15,9 +16,9 @@ const Contact = () => {
     resolver: zodResolver(formSchema),
   });
 
-  const processForm: SubmitHandler<formType> = (data) => {
+  const processForm: SubmitHandler<formType> = async (data) => {
+    const result = await sendForm(data);
     reset();
-    console.log(data);
   };
 
   return (
