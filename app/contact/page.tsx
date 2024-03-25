@@ -3,18 +3,29 @@
 import { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
+let renderCount = 0;
+
 const Contact = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      firstName: '',
+      lastName: '',
+      email: '',
+      subject: '',
+      message: '',
+    },
+  });
 
+  renderCount++;
   const processForm = (data) => console.log(data);
-  console.log(errors);
 
   return (
     <div className='contact-form-wrapper mt-40 mb-20 flex flex-col items-center'>
+      <div>renderCount={renderCount}</div>
       <form onSubmit={handleSubmit(processForm)}>
         <fieldset className='item-field flex gap-x-2.5 mb-4'>
           <legend className='pb-1'>
@@ -83,10 +94,10 @@ const Contact = () => {
           <div className='w-full flex flex-col'>
             <input
               {...register('email', {
-                required: true,
+                required: 'Valid email is required',
                 pattern: {
                   value: /\S+@\S+\.\S+/,
-                  message: 'Valid email format is required',
+                  message: 'Valid email is required',
                 },
               })}
               type='text'
@@ -116,7 +127,7 @@ const Contact = () => {
           <div className='w-full flex flex-col'>
             <input
               {...register('subject', {
-                required: true,
+                required: 'Subject is required',
                 minLength: {
                   value: 2,
                   message: 'Subject must be at least 2 characters',
@@ -149,7 +160,7 @@ const Contact = () => {
           <div className='w-full flex flex-col'>
             <textarea
               {...register('message', {
-                required: true,
+                required: 'Message is required',
                 minLength: {
                   value: 4,
                   message: 'Message must be at least 4 characters',
