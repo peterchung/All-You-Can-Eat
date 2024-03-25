@@ -2,8 +2,7 @@
 
 import { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
-
-let renderCount = 0;
+import { formType } from '../types';
 
 const Contact = () => {
   const {
@@ -20,12 +19,10 @@ const Contact = () => {
     },
   });
 
-  renderCount++;
-  const processForm = (data) => console.log(data);
+  const processForm: SubmitHandler<formType> = (data) => console.log(data);
 
   return (
     <div className='contact-form-wrapper mt-40 mb-20 flex flex-col items-center'>
-      <div>renderCount={renderCount}</div>
       <form onSubmit={handleSubmit(processForm)}>
         <fieldset className='item-field flex gap-x-2.5 mb-4'>
           <legend className='pb-1'>
