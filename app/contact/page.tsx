@@ -1,25 +1,24 @@
 'use client';
 
-import { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { formType } from '../types';
+import { formSchema } from '@/lib/schema';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 const Contact = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({
-    defaultValues: {
-      firstName: '',
-      lastName: '',
-      email: '',
-      subject: '',
-      message: '',
-    },
+    resolver: zodResolver(formSchema),
   });
 
-  const processForm: SubmitHandler<formType> = (data) => console.log(data);
+  const processForm: SubmitHandler<formType> = (data) => {
+    reset();
+    console.log(data);
+  };
 
   return (
     <div className='contact-form-wrapper mt-40 mb-20 flex flex-col items-center'>
@@ -39,9 +38,7 @@ const Contact = () => {
             </label>
             <div className='firstName-input w-full flex flex-col'>
               <input
-                {...register('firstName', {
-                  required: 'First name is required',
-                })}
+                {...register('firstName')}
                 type='text'
                 className={`firstName p-2.5 text-black ${
                   errors.firstName ? 'border border-red-500' : ''
@@ -62,7 +59,7 @@ const Contact = () => {
             </label>
             <div className='w-full flex flex-col'>
               <input
-                {...register('lastName', { required: 'Last name is required' })}
+                {...register('lastName')}
                 type='text'
                 className={`lastName p-2.5 text-black ${
                   errors.lastName ? 'border border-red-500' : ''
@@ -90,13 +87,7 @@ const Contact = () => {
           </legend>
           <div className='w-full flex flex-col'>
             <input
-              {...register('email', {
-                required: 'Valid email is required',
-                pattern: {
-                  value: /\S+@\S+\.\S+/,
-                  message: 'Valid email is required',
-                },
-              })}
+              {...register('email')}
               type='text'
               className={`email p-2.5 w-full text-black ${
                 errors.email ? 'border border-red-500' : ''
@@ -123,13 +114,7 @@ const Contact = () => {
           </legend>
           <div className='w-full flex flex-col'>
             <input
-              {...register('subject', {
-                required: 'Subject is required',
-                minLength: {
-                  value: 2,
-                  message: 'Subject must be at least 2 characters',
-                },
-              })}
+              {...register('subject')}
               type='text'
               className={`subject p-2.5 w-full text-black ${
                 errors.subject ? 'border border-red-500' : ''
@@ -156,13 +141,7 @@ const Contact = () => {
           </legend>
           <div className='w-full flex flex-col'>
             <textarea
-              {...register('message', {
-                required: 'Message is required',
-                minLength: {
-                  value: 4,
-                  message: 'Message must be at least 4 characters',
-                },
-              })}
+              {...register('message')}
               className={`message p-2.5 w-full text-black h-32 ${
                 errors.message ? 'border border-red-500' : ''
               }`}
