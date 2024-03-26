@@ -22,13 +22,13 @@ const Contact = () => {
 
     if (result?.emailSent) {
       console.log('result prop on return obj:', result.result);
-      // toast.success('Email sent!');
+      toast.success('Message sent!');
       reset();
       return;
     }
 
     console.log('error obj:', result?.error);
-    // toast.error('Something went wrong!');
+    toast.error('Message was not sent!');
   };
 
   return (
