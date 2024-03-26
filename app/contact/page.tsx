@@ -5,12 +5,13 @@ import { formType } from '../types';
 import { formSchema } from '@/lib/schema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { sendForm } from '@/utils/actions';
+import { toast } from 'sonner';
 
 const Contact = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
     reset,
   } = useForm({
     resolver: zodResolver(formSchema),
@@ -18,7 +19,16 @@ const Contact = () => {
 
   const processForm: SubmitHandler<formType> = async (data) => {
     const result = await sendForm(data);
-    reset();
+
+    if (result?.emailSent) {
+      console.log('result prop on return obj:', result.result);
+      // toast.success('Email sent!');
+      reset();
+      return;
+    }
+
+    console.log('error obj:', result?.error);
+    // toast.error('Something went wrong!');
   };
 
   return (
@@ -156,9 +166,10 @@ const Contact = () => {
         </fieldset>
         <button
           type='submit'
+          disabled={isSubmitting}
           className='bg-gray-200 font-bold text-black uppercase py-4 px-6 rounded hover:opacity-50'
         >
-          Submit
+          {isSubmitting ? 'Submitting...' : 'Submit'}
         </button>
       </form>
     </div>
