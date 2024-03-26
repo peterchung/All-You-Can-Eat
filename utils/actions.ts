@@ -8,7 +8,6 @@ export const sendForm = async (data) => {
 
   if (formData.success) {
     try {
-      const formData = formSchema.safeParse(data);
       const { firstName, lastName, email, subject, message } = formData.data;
 
       const transporter = nodemailer.createTransport({
