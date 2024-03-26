@@ -13,11 +13,11 @@ const Contact = () => {
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
-  } = useForm({
+  } = useForm<formType>({
     resolver: zodResolver(formSchema),
   });
 
-  const processForm: SubmitHandler<formType> = async (data) => {
+  const processForm: SubmitHandler<formType> = async (data): Promise<void> => {
     const result = await sendForm(data);
 
     if (result?.emailSent) {
