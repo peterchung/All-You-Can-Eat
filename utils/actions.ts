@@ -2,15 +2,16 @@
 
 import nodemailer from 'nodemailer';
 import { formSchema } from '@/lib/schema';
+import { formType } from '@/app/types';
 
-export const sendForm = async (data) => {
+export const sendForm = async (data: formType) => {
   const formData = formSchema.safeParse(data);
 
   if (formData.success) {
     try {
       const { firstName, lastName, email, subject, message } = formData.data;
 
-      const transporter = nodemailer.createTransport({
+      const transporter: nodemailer.Transporter = nodemailer.createTransport({
         host: process.env.NODEMAILER_HOST,
         port: 587,
         secure: false,
@@ -20,7 +21,7 @@ export const sendForm = async (data) => {
         },
       });
 
-      const mailOptions = {
+      const mailOptions: nodemailer.SendMailOptions = {
         from: process.env.NODEMAILER_EMAIL_FROM,
         to: process.env.NODEMAILER_EMAIL_SEND_TO,
         subject,
@@ -29,20 +30,21 @@ export const sendForm = async (data) => {
         <p>${message}</p>`,
       };
 
-      const result = await transporter.sendMail(mailOptions);
+      const result: nodemailer.SentMessageInfo = await transporter.sendMail(
+        mailOptions
+      );
 
       return {
-        error: false,
         emailSent: true,
         errors: [],
         result,
       };
     } catch (error) {
-      return { error: true, emailSent: false, errors: [error] };
+      return { emailSent: false, errors: [error] };
     }
   }
 
   if (formData.error) {
-    return { emailSent: false, error: formData.error.format() };
+    return { emailSent: false, errors: formData.error.format() };
   }
 };
