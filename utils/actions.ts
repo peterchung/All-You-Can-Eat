@@ -47,6 +47,4 @@ export const sendForm = async (data: FormType) => {
   if (formData.error) {
     return { emailSent: false, errors: formData.error.format() };
   }
-
-  return { emailSent: false, errors: ['An unexpected error occured.'] };
 };
