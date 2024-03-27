@@ -2,9 +2,9 @@
 
 import nodemailer from 'nodemailer';
 import { formSchema } from '@/lib/schema';
-import { formType } from '@/app/types';
+import { FormType } from '@/app/types';
 
-export const sendForm = async (data: formType) => {
+export const sendForm = async (data: FormType) => {
   const formData = formSchema.safeParse(data);
 
   if (formData.success) {
@@ -47,4 +47,6 @@ export const sendForm = async (data: formType) => {
   if (formData.error) {
     return { emailSent: false, errors: formData.error.format() };
   }
+
+  return { emailSent: false, errors: ['An unexpected error occured.'] };
 };

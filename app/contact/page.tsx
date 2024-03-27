@@ -1,7 +1,7 @@
 'use client';
 
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { formType } from '../types';
+import { FormType } from '../types';
 import { formSchema } from '@/lib/schema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { sendForm } from '@/utils/actions';
@@ -13,11 +13,11 @@ const Contact = () => {
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
-  } = useForm<formType>({
+  } = useForm<FormType>({
     resolver: zodResolver(formSchema),
   });
 
-  const processForm: SubmitHandler<formType> = async (data): Promise<void> => {
+  const processForm: SubmitHandler<FormType> = async (data): Promise<void> => {
     const result = await sendForm(data);
 
     if (result?.emailSent) {
@@ -27,7 +27,7 @@ const Contact = () => {
       return;
     }
 
-    console.log('error obj:', result?.error);
+    console.log('error obj:', result?.errors);
     toast.error('Message was not sent!');
   };
 
