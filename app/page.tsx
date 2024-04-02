@@ -1,6 +1,16 @@
 import Image from 'next/image';
+import { client, urlFor } from './lib/sanity';
 
-export default function Home() {
+const getData = async () => {
+  const query = "*[_type == 'homeImages'][0]";
+
+  const data = await client.fetch(query);
+
+  return data;
+};
+
+export default async function Home() {
+  const data = await getData();
   return (
     <main>
       <section className='landing-page flex flex-col h-screen'>
@@ -26,7 +36,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className='podcast-about flex flex-col justify-between h-screen border-2'>
+      {/* <section className='podcast-about flex flex-col justify-between h-screen border-2'>
         <div className='flex justify-between mx-10 mt-28'>
           <div className='w-1/2'>
             <h1 className='text-8xl font-bold uppercase'>
@@ -76,6 +86,48 @@ export default function Home() {
             height='211'
             className='my-4'
           />
+        </div>
+      </section> */}
+      <section className='mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8'>
+        <div className='mb-8 flex flex-wrap justify-between md:mb-16'>
+          <div className='mb-6 flex w-full flex-col justify-center sm:mb-12 lg:mb-0 lg:w-1/3 lg:pb-24 lg:pt-48'>
+            <h1 className='mb-4 text-4xl font-bold sm:text-5xl md:mb-8 md:text-6xl uppercase'>
+              what is all you can eat?
+            </h1>
+            <p className='max-w-md leading-relaxed text-gray-500 text-justify xl:text-lg'>
+              we explore and share our Asian American experiences. We created
+              this space to share our different opinions in a mostly
+              lighthearted way. The Asian American come up can be so comparable
+              yet at the same time so unique - same same but different*. We
+              encourage open dialogue and finding comfort over shared
+              experiences or discovering new ones. Have your fill however you
+              want. This is All You Can Eat.
+            </p>
+          </div>
+
+          <div className='mb-12 mt-12 flex w-full md:mb-16 lg:w-2/3'>
+            <div className='relative left-12 top-12 z-10 -ml-12 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:left-16 md:top-16 lg:ml-0'>
+              <Image
+                src={urlFor(data.image1).url()}
+                alt='Host Peter'
+                className='h-full w-full object-cover object-center'
+                width={500}
+                height={500}
+                priority
+              />
+            </div>
+
+            <div className='overflow-hidden rounded-lg bg-gray-100 shadow-lg'>
+              <Image
+                src={urlFor(data.image2).url()}
+                alt='Host Peter'
+                className='h-full w-full object-cover object-center'
+                width={500}
+                height={500}
+                priority
+              />
+            </div>
+          </div>
         </div>
       </section>
 
