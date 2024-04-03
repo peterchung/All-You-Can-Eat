@@ -1,9 +1,9 @@
-import Newest from '@/app/components/newest';
+import Products from '@/app/components/products';
 
 const Shop = () => {
   return (
     <div>
-      <Newest />
+      <Products />
     </div>
   );
 };
