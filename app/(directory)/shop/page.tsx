@@ -1,5 +1,11 @@
+import Newest from '@/app/components/newest';
+
 const Shop = () => {
-  return <div>shop page</div>;
+  return (
+    <div>
+      <Newest />
+    </div>
+  );
 };
 
 export default Shop;
