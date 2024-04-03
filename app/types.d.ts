@@ -8,6 +8,14 @@ export interface FormType {
   message: 'string';
 }
 
+export interface simplifiedProduct {
+  _id: string;
+  price: number;
+  name: string;
+  slug: string;
+  imageUrl: string;
+}
+
 // export interface FormResultError {
 //   emailSent: boolean;
 //   errors: ValidationErrors;
