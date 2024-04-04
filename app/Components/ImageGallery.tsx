@@ -13,7 +13,7 @@ export default function ImageGallery({ images }: imageAppProps) {
   };
 
   return (
-    <div className='grid gap-4 lg:grid-cols-5 sm:py-24'>
+    <div className='grid gap-4 lg:grid-cols-5'>
       <div className='order-last flex gap-4 lg:order-none lg:flex-col'>
         {images.map((image: any, idx: any) => (
           <div key={idx} className='overflow-hidden rounded-lg bg-gray-100'>
@@ -29,7 +29,7 @@ export default function ImageGallery({ images }: imageAppProps) {
         ))}
       </div>
 
-      <div className='relative overflow-hidden rounded-lg bg-gray-100 lg:col-span-4'>
+      <div className='overflow-hidden rounded-lg bg-gray-100 lg:col-span-4'>
         <Image
           src={urlFor(mainImage).url()}
           alt='main image'
