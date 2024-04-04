@@ -25,6 +25,10 @@ export interface fullProduct {
   description: string;
 }
 
+export interface imageAppProps {
+  images: any;
+}
+
 // export interface FormResultError {
 //   emailSent: boolean;
 //   errors: ValidationErrors;

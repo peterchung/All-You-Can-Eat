@@ -1,3 +1,4 @@
+import ImageGallery from '@/app/components/ImageGallery';
 import { client } from '@/app/lib/sanity';
 import { fullProduct } from '@/app/types';
 
@@ -23,6 +24,14 @@ export default async function ProductPage({
   params: { slug: string };
 }) {
   const data: fullProduct = await getData(params.slug);
-  console.log('data returned', data);
-  return <div>hello</div>;
+  console.log('this is the data', data);
+  return (
+    <div className=''>
+      <div className='mx-auto max-w-screen-xl px-4 md:px-8'>
+        <div className='grid gap-8 md:grid-cols-2'>
+          <ImageGallery images={data.images} />
+        </div>
+      </div>
+    </div>
+  );
 }

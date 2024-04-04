@@ -15,8 +15,8 @@ const links = [
 export default function Navbar() {
   const pathname = usePathname();
   return (
-    <header>
-      <div className='flex justify-between items-center p-4 sm:p-6 lg:max-w-full w-full fixed top-0 z-50'>
+    <header className='mb-8 border-b'>
+      <div className='flex justify-between items-center px-4 sm:px-6 lg:max-w-full w-full fixed top-0 z-50'>
         <Link href='/'>
           <Image
             src='/images/AYCE-Logo.png'
