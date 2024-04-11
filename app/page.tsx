@@ -13,15 +13,11 @@ export default async function Home() {
   const data = await getData();
   return (
     <main>
-      <section className='landing-page flex flex-col h-screen'>
-        <div className='flex-grow'>
-          <div
-            className='absolute inset-0 bg-cover bg-center'
-            style={{
-              backgroundImage: 'url("/images/landing-image-temp.png")',
-            }}
-          ></div>
-        </div>
+      <section
+        className='landing-page flex flex-col h-screen bg-cover bg-center'
+        style={{ backgroundImage: 'url("/images/landing-image-temp.png")' }}
+      >
+        <div className='flex-grow'></div>
         <div className='mb-20 z-10'>
           <div className='mx-auto max-w-6xl'>
             <div className='font-bold text-white text-5xl my-10'>

@@ -12,8 +12,9 @@ export default function ShoppingCartModal() {
   const { cartCount, shouldDisplayCart, handleCartClick } = useShoppingCart();
 
   return (
+    // shouldDisplayCart is boolean
     <Sheet open={shouldDisplayCart} onOpenChange={() => handleCartClick()}>
-      <SheetContent className='sm:max-w-lg w-[90vw]'>
+      <SheetContent className='sm:max-w-xl w-[90vw]'>
         <SheetHeader>
           <SheetTitle>Shopping Cart</SheetTitle>
         </SheetHeader>
