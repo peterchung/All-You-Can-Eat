@@ -1,7 +1,7 @@
 'use client';
 
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { FormType } from '../types';
+import { FormType } from '../../types';
 import { formSchema } from '@/lib/schema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { sendForm } from '@/utils/actions';
@@ -43,7 +43,7 @@ const Contact = () => {
           </legend>
           <div className='first-name-wrapper flex flex-col'>
             <label
-              className={`${errors.firstName ? 'text-red-500' : 'text-white'}`}
+              className={`${errors.firstName ? 'text-red-500' : 'text-black'}`}
             >
               First Name
             </label>
@@ -52,7 +52,9 @@ const Contact = () => {
                 {...register('firstName')}
                 type='text'
                 className={`firstName p-2.5 text-black ${
-                  errors.firstName ? 'border border-red-500' : ''
+                  errors.firstName
+                    ? 'border rounded-md border-red-500'
+                    : 'border rounded-md border-black'
                 }`}
               />
               {errors.firstName?.message && (
@@ -64,7 +66,7 @@ const Contact = () => {
           </div>
           <div className='last-name-wrapper flex flex-col'>
             <label
-              className={`${errors.lastName ? 'text-red-500' : 'text-white'}`}
+              className={`${errors.lastName ? 'text-red-500' : 'text-black'}`}
             >
               Last Name
             </label>
@@ -73,7 +75,9 @@ const Contact = () => {
                 {...register('lastName')}
                 type='text'
                 className={`lastName p-2.5 text-black ${
-                  errors.lastName ? 'border border-red-500' : ''
+                  errors.lastName
+                    ? 'border rounded-md border-red-500'
+                    : 'border rounded-md border-black'
                 }`}
               />
               {errors.lastName?.message && (
@@ -89,7 +93,7 @@ const Contact = () => {
             <label className='flex gap-x-2'>
               <span
                 className={`text-lg font-medium ${
-                  errors.email ? 'text-red-500' : 'text-white'
+                  errors.email ? 'text-red-500' : 'text-black'
                 }`}
               >
                 Email Address (required)
@@ -101,7 +105,9 @@ const Contact = () => {
               {...register('email')}
               type='text'
               className={`email p-2.5 w-full text-black ${
-                errors.email ? 'border border-red-500' : ''
+                errors.email
+                  ? 'border rounded-md border-red-500'
+                  : 'border rounded-md border-black'
               }`}
             />
             {errors.email?.message && (
@@ -116,7 +122,7 @@ const Contact = () => {
             <label className='flex gap-x-2'>
               <span
                 className={`text-lg font-medium ${
-                  errors.subject ? 'text-red-500' : 'text-white'
+                  errors.subject ? 'text-red-500' : 'text-black'
                 }`}
               >
                 Subject (required)
@@ -128,7 +134,9 @@ const Contact = () => {
               {...register('subject')}
               type='text'
               className={`subject p-2.5 w-full text-black ${
-                errors.subject ? 'border border-red-500' : ''
+                errors.subject
+                  ? 'border rounded-md border-red-500'
+                  : 'border rounded-md border-black'
               }`}
             />
             {errors.subject?.message && (
@@ -143,7 +151,7 @@ const Contact = () => {
             <label className='flex gap-x-2'>
               <span
                 className={`text-lg font-medium ${
-                  errors.message ? 'text-red-500' : 'text-white'
+                  errors.message ? 'text-red-500' : 'text-black'
                 }`}
               >
                 Message (required)
@@ -154,7 +162,9 @@ const Contact = () => {
             <textarea
               {...register('message')}
               className={`message p-2.5 w-full text-black h-32 ${
-                errors.message ? 'border border-red-500' : ''
+                errors.message
+                  ? 'border rounded-md border-red-500'
+                  : 'border rounded-md border-black'
               }`}
             ></textarea>
             {errors.message?.message && (
