@@ -29,6 +29,14 @@ export interface imageAppProps {
   images: any;
 }
 
+export interface ProductCart {
+  name: string;
+  description: string;
+  price: number;
+  currency: string;
+  image: any;
+}
+
 // export interface FormResultError {
 //   emailSent: boolean;
 //   errors: ValidationErrors;

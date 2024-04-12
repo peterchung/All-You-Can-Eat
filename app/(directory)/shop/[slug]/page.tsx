@@ -1,3 +1,4 @@
+import AddToCart from '@/app/components/AddToCart';
 import ImageGallery from '@/app/components/ImageGallery';
 import { client } from '@/app/lib/sanity';
 import { fullProduct } from '@/app/types';
@@ -28,7 +29,7 @@ export default async function ProductPage({
   params: { slug: string };
 }) {
   const data: fullProduct = await getData(params.slug);
-  console.log('this is the data', data);
+
   return (
     <div className=''>
       <div className='mx-auto max-w-screen-xl px-4 md:px-8'>
@@ -43,9 +44,13 @@ export default async function ProductPage({
               <span className='text-2xl font-bold'>${data.price}.00 USD</span>
             </div>
             <div className='flex flex-col'>
-              <button className='w-1/2 rounded-full bg-white border-2 border-blue-500 shadow-lg py-2 mb-4'>
-                Add to cart
-              </button>
+              <AddToCart
+                currency='USD'
+                description={data.description}
+                image={data.images[0]}
+                name={data.name}
+                price={data.price}
+              />
               <button className='w-1/2 rounded-full bg-blue-500 border-2 border-blue-500 shadow-lg py-2 mb-4'>
                 Checkout now
               </button>
