@@ -35,6 +35,7 @@ export interface ProductCart {
   price: number;
   currency: string;
   image: any;
+  id: string;
 }
 
 // export interface FormResultError {
