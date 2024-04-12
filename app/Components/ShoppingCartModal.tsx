@@ -23,7 +23,7 @@ export default function ShoppingCartModal() {
   return (
     // shouldDisplayCart is boolean
     <Sheet open={shouldDisplayCart} onOpenChange={() => handleCartClick()}>
-      <SheetContent className='sm:max-w-xl w-[90vw]'>
+      <SheetContent className='sm:max-w-lg w-[90vw]'>
         <SheetHeader>
           <SheetTitle>Shopping Cart</SheetTitle>
         </SheetHeader>
@@ -85,7 +85,7 @@ export default function ShoppingCartModal() {
             </p>
 
             <div className='mt-6'>
-              <Button className='w-full'>Checkout</Button>
+              <Button className='w-full rounded-2xl'>Checkout</Button>
             </div>
             <div className='mt-6 flex justify-center text-center text-sm text-gray-500'>
               <p>

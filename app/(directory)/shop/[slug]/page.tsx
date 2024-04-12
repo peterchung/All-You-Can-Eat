@@ -51,7 +51,7 @@ export default async function ProductPage({
                 name={data.name}
                 price={data.price}
               />
-              <button className='w-1/2 rounded-full bg-blue-500 border-2 border-blue-500 shadow-lg py-2 mb-4'>
+              <button className='w-1/2 rounded-2xl bg-blue-500 border-2 border-blue-500 shadow-lg py-2 mb-4'>
                 Checkout now
               </button>
             </div>
