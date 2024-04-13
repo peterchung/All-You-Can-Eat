@@ -1,4 +1,5 @@
 import AddToCart from '@/app/components/AddToCart';
+import CheckoutNow from '@/app/components/CheckoutNow';
 import ImageGallery from '@/app/components/ImageGallery';
 import { client } from '@/app/lib/sanity';
 import { fullProduct } from '@/app/types';
@@ -53,9 +54,17 @@ export default async function ProductPage({
                 key={data._id}
                 price_id={data.price_id}
               />
-              <button className='w-1/2 rounded-2xl bg-blue-500 border-2 border-blue-500 shadow-lg py-2 mb-4'>
+              {/* <button className='w-1/2 rounded-2xl bg-blue-500 border-2 border-blue-500 shadow-lg py-2 mb-4'>
                 Checkout now
-              </button>
+              </button> */}
+              <CheckoutNow
+                currency='USD'
+                description={data.description}
+                image={data.images[0]}
+                name={data.name}
+                price={data.price}
+                price_id={data.price_id}
+              />
             </div>
             <div>
               <span className='tracking-wide'>{data.description}</span>
