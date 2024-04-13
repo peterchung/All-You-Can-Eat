@@ -10,8 +10,8 @@ const getData = async (slug: string) => {
       images,
       price,
       name,
-      'slug': slug.current
-      
+      'slug': slug.current,
+      price_id
   }`;
 
   const data = await client.fetch(query);
@@ -50,7 +50,8 @@ export default async function ProductPage({
                 image={data.images[0]}
                 name={data.name}
                 price={data.price}
-                id={data._id}
+                key={data._id}
+                price_id={data.price_id}
               />
               <button className='w-1/2 rounded-2xl bg-blue-500 border-2 border-blue-500 shadow-lg py-2 mb-4'>
                 Checkout now

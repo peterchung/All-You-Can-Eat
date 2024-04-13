@@ -23,6 +23,7 @@ export interface fullProduct {
   slug: string;
   images: any;
   description: string;
+  price_id: string;
 }
 
 export interface imageAppProps {
@@ -35,7 +36,7 @@ export interface ProductCart {
   price: number;
   currency: string;
   image: any;
-  id: string;
+  price_id: string;
 }
 
 // export interface FormResultError {

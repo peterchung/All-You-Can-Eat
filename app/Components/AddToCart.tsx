@@ -10,7 +10,7 @@ export default function AddToCart({
   price,
   currency,
   image,
-  id,
+  price_id,
 }: ProductCart) {
   const { addItem, handleCartClick } = useShoppingCart();
   const product = {
@@ -19,7 +19,7 @@ export default function AddToCart({
     price: price,
     currency: currency,
     image: urlFor(image).url(),
-    id: id,
+    price_id: price_id,
   };
 
   return (
