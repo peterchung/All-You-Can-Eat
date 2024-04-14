@@ -11,7 +11,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
       cartMode='client-only'
       stripe={process.env.NEXT_PUBLIC_STRIPE_KEY as string}
       successUrl='http://localhost:3000/order/success'
-      cancelUrl='http://localhost:3000/error'
+      cancelUrl='http://localhost:3000/order/error'
       currency='USD'
       billingAddressCollection={true}
       shouldPersist={true}
