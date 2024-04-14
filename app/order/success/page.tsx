@@ -1,8 +1,24 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
 import { CircleCheck } from 'lucide-react';
 import Link from 'next/link';
+import { useEffect, useRef } from 'react';
+import { useShoppingCart } from 'use-shopping-cart';
 
-export default function stripeSuccess() {
+export default function StripeSuccess() {
+  const { clearCart } = useShoppingCart();
+  const hasCleared = useRef(false);
+
+  //TODO: clear the cart upon successful payment
+  // useEffect(() => {
+  //   console.log('has cleared should be false');
+  //   if (!hasCleared.current) {
+  //     clearCart();
+  //     hasCleared.current = true;
+  //   }
+  // }, [clearCart]);
+
   return (
     <div className='h-screen'>
       <div className='mt-60 md:max-w-[50vw] mx-auto'>
