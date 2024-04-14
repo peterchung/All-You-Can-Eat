@@ -15,7 +15,6 @@ export default function stripeError() {
             We're sorry! There was an error processing your payment. Please try
             again.
           </p>
-          <p></p>
           <Button asChild>
             <Link href='/shop'>Go back</Link>
           </Button>

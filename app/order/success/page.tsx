@@ -12,7 +12,6 @@ export default function stripeSuccess() {
             Order Confirmed
           </h3>
           <p className='text-gray-600 my-2'>Thank you for supporting AYCE!</p>
-          <p></p>
           <Button asChild>
             <Link href='/'>Go back</Link>
           </Button>
