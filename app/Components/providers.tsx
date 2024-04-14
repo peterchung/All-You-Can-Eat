@@ -16,6 +16,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
       billingAddressCollection={true}
       shouldPersist={true}
       language='en-US'
+      allowedCountries={['US']}
     >
       {children}
       <Toaster position='top-center' richColors expand closeButton />
