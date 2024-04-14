@@ -12,8 +12,7 @@ export default function stripeError() {
             Payment Error
           </h3>
           <p className='text-gray-600 my-2'>
-            We're sorry! There was an error processing your payment. Please try
-            again.
+            Sorry! There was an error processing your payment. Please try again.
           </p>
           <Button asChild>
             <Link href='/shop'>Go back</Link>
