@@ -11,6 +11,7 @@ export default function StripeSuccess() {
   const hasCleared = useRef(false);
 
   //TODO: clear the cart upon successful payment
+  //TODO: create session so that this page is only accessible after order has been processed and can't be reached directly
   // useEffect(() => {
   //   console.log('has cleared should be false');
   //   if (!hasCleared.current) {

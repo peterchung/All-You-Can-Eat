@@ -13,6 +13,8 @@ const links = [
   { name: 'SHOP', href: '/shop' },
 ];
 
+//TODO: Add responsive design to navbar so it disappears when scrolling down and re-appears when scrolling up
+
 export default function Navbar() {
   const pathname = usePathname();
   const { handleCartClick } = useShoppingCart();
