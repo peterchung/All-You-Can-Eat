@@ -17,16 +17,15 @@ const TheTeam = async () => {
   const data = await getData();
   const imageUrl = Object.values(data);
 
-  console.log('array of images', imageUrl);
   return (
     <div className='flex py-20'>
       <div className='mx-auto'>
         <div>
           <p>Click picture to read profile!</p>
         </div>
-        <div className='flex space-x-4'>
+        <div className='flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4'>
           {imageUrl.map((image, idx) => (
-            <SlidingImage key={idx} images={image} />
+            <SlidingImage key={idx} images={image} index={idx} />
           ))}
         </div>
       </div>
