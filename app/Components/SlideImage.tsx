@@ -5,8 +5,14 @@ import { useState } from 'react';
 import { urlFor } from '../lib/sanity';
 import { imageAppProps } from '../types';
 
-const SlidingImage = ({ images }: imageAppProps) => {
+const SlidingImage = ({ images, index }: imageAppProps & { index: number }) => {
   const [showText, setShowText] = useState(false);
+
+  const profileText = ['text1', 'text2', 'text3'];
+  const profileName = ['Rob AKA Producer Rob', 'Sora', 'Peter'];
+
+  const displayedText = profileText[index] || 'error';
+  const displayedName = profileName[index] || 'error';
 
   return (
     <div
@@ -22,20 +28,13 @@ const SlidingImage = ({ images }: imageAppProps) => {
         <Image src={urlFor(images).url()} alt='photo' fill={true} />
       </div>
       <div
-        className={`absolute inset-0 bg-indigo-200 bg-opacity-50 flex items-center font-semibold text-blue-900 transition-opacity duration-500 ease-in-out ${
+        className={`absolute inset-0 bg-indigo-200 bg-opacity-50 flex flex-col pt-4 items-center font-semibold text-blue-900 transition-opacity duration-500 ease-in-out ${
           showText ? 'opacity-100' : 'opacity-0'
         }`}
       >
-        <p>
-          Some text!Some text!Some text!Some text!Some text!Some text!Some
-          text!Some text!Some text!Some text!Some text!Some text!Some text!Some
-          text!Some text!Some text!Some text!Some text!Some text!Some text!Some
-          text!Some text!Some text!Some text!Some text!Some text!Some text!Some
-          text!Some text!Some text!Some text!Some text!Some text!Some text!Some
-          text!Some text!Some text!Some text!Some text!Some text!Some text!Some
-          text!Some text!Some text!Some text!Some text!Some text!Some text!Some
-          text!Some text!Some text!Some text!Some text!Some text!Some text!Some
-        </p>
+        <h3 className='text-lg font-bold'>{displayedName}</h3>
+        <br></br>
+        <p>{displayedText}</p>
       </div>
     </div>
   );
