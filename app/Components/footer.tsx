@@ -1,5 +1,6 @@
 'use client';
 
+import { Copyright } from 'lucide-react';
 import Image from 'next/image';
 import { useRef, useLayoutEffect } from 'react';
 
@@ -8,6 +9,7 @@ const Footer = (): JSX.Element => {
   const text2Ref = useRef<HTMLParagraphElement | null>(null);
   const lineRef = useRef<HTMLHRElement | null>(null);
   const contactRef = useRef<HTMLDivElement | null>(null);
+  const copyrightRef = useRef<HTMLDivElement | null>(null);
 
   useLayoutEffect(() => {
     const updateTextWidth = () => {
@@ -57,25 +59,33 @@ const Footer = (): JSX.Element => {
             ref={text2Ref}
             className='flex justify-center'
             style={{
-              fontSize: 'clamp(2rem, 6vw, 10rem)',
+              fontSize: 'clamp(2rem, 7vw, 10rem)',
               lineHeight: '1.25',
             }}
-          ></p>
+          >
+            Peter and Sora
+          </p>
         </div>
         <div className='py-4'>
           <hr ref={lineRef}></hr>
         </div>
         <div ref={contactRef} className='contact-wrapper flex justify-between'>
-          <div className='contact'>
-            <h3
+          <div className='flex flex-col'>
+            {/* <h3
               className='mb-5 uppercase'
               style={{ fontSize: 'clamp(2rem, 2vw, 6rem' }}
             >
               contact
-            </h3>
-            <a className='underline' href='mailto:aycepod1@gmail.com'>
-              aycepod1@gmail.com
-            </a>
+            </h3> */}
+            <div className='flex'>
+              <Copyright className='w-5 h-5' />
+              <p className='text-sm pl-2'>2024, All You Can Eat.</p>
+            </div>
+            <div>
+              <p className='text-xs'>
+                Icons by <a href='https://icons8.com/'>Icons8</a>
+              </p>
+            </div>
           </div>
           <div className='social-media flex'>
             <div className='mr-4 hover:cursor-pointer'>
