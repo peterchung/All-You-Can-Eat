@@ -18,10 +18,5 @@ export default {
       type: 'image',
       title: 'Third Image',
     },
-    {
-      name: 'image4',
-      type: 'image',
-      title: 'Fourth Image',
-    },
   ],
 }
