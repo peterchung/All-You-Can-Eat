@@ -33,14 +33,14 @@ export default function Navbar() {
               <div key={idx}>
                 {pathname === link.href ? (
                   <Link
-                    className='text-lg font-bold text-primary'
+                    className='text-lg font-bold text-amber-400'
                     href={link.href}
                   >
                     {link.name}
                   </Link>
                 ) : (
                   <Link
-                    className='text-lg font-bold text-black transition duration-100 hover:text-primary'
+                    className='text-lg font-bold text-blue-900 transition duration-100 hover:text-primary'
                     href={link.href}
                   >
                     {link.name}

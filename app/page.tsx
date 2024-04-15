@@ -9,23 +9,25 @@ const getData = async () => {
   return data;
 };
 
+export const dynamic = 'force-dynamic';
+
 export default async function Home() {
   const data = await getData();
   return (
     <main>
       <section
         className='landing-page flex flex-col h-screen bg-cover bg-center'
-        style={{ backgroundImage: 'url("/images/landing-image-temp.png")' }}
+        style={{ backgroundImage: 'url("/images/landing-page.jpeg")' }}
       >
-        <div className='flex-grow'></div>
+        <div className='relative'></div>
         <div className='mb-20 z-10'>
-          <div className='mx-auto max-w-6xl'>
-            <div className='font-bold text-white text-5xl my-10'>
-              <h1>TWO ASIANS EXPLORING ASIAN AMERICAN-ISH EXPERIENCES</h1>
+          <div className='mx-auto max-w-lg absolute top-20 left-8'>
+            <div className='font-bold text-blue-900 text-5xl my-8 uppercase'>
+              <h3>a podcast about anything, really. sort of.</h3>
             </div>
             <div>
-              <button className='bg-gray-200 hover:opacity-50 font-bold text-black py-4 px-6 rounded-full'>
-                LISTEN NOW
+              <button className='bg-gray-200 hover:opacity-50 font-bold text-black py-4 px-6 rounded-full uppercase'>
+                Watch now
               </button>
             </div>
           </div>
@@ -86,12 +88,12 @@ export default async function Home() {
       </section> */}
       <section className='mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8'>
         <div className='mb-8 flex flex-wrap justify-between md:mb-16'>
-          <div className='mb-6 flex w-full flex-col justify-center sm:mb-12 lg:mb-0 lg:w-1/3 lg:pb-24 lg:pt-48'>
+          <div className='mb-6 flex w-full flex-col justify-center sm:mb-12 lg:mb-0 lg:w-5/12 lg:pb-24 lg:pt-48'>
             <h1 className='mb-4 text-4xl font-bold sm:text-5xl md:mb-8 md:text-6xl uppercase'>
               what is all you can eat?
             </h1>
-            <p className='max-w-md leading-relaxed text-gray-500 text-justify xl:text-lg'>
-              we explore and share our Asian American experiences. We created
+            <p className='max-w-md leading-relaxed text-gray-500 xl:text-lg'>
+              We explore and share our Asian American experiences. We created
               this space to share our different opinions in a mostly
               lighthearted way. The Asian American come up can be so comparable
               yet at the same time so unique - same same but different*. We
@@ -101,19 +103,19 @@ export default async function Home() {
             </p>
           </div>
 
-          <div className='mb-12 mt-12 flex w-full md:mb-16 lg:w-2/3'>
+          <div className='mb-12 mt-12 flex w-full md:mb-16 lg:w-7/12'>
             <div className='relative left-12 top-12 z-10 -ml-12 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:left-16 md:top-16 lg:ml-0'>
               <Image
                 src={urlFor(data.image1).url()}
                 alt='Host Peter'
                 className='h-full w-full object-cover object-center'
-                width={500}
-                height={500}
+                width={700}
+                height={700}
                 priority
               />
             </div>
 
-            <div className='overflow-hidden rounded-lg bg-gray-100 shadow-lg'>
+            {/* <div className='overflow-hidden rounded-lg bg-gray-100 shadow-lg'>
               <Image
                 src={urlFor(data.image2).url()}
                 alt='Host Peter'
@@ -122,16 +124,19 @@ export default async function Home() {
                 height={500}
                 priority
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
 
-      <section className='welcome-and-listen flex flex-col h-screen border-2'>
-        <div className='flex justify-center text-7xl font-bold uppercase my-10'>
+      <section
+        className='welcome-and-listen flex flex-col h-screen bg-cover bg-center text-amber-300'
+        style={{ backgroundImage: 'url("/images/welcome-to-ayce.jpeg")' }}
+      >
+        <div className='flex justify-center text-7xl font-bold uppercase mt-10'>
           <h1>welcome to all you can eat</h1>
         </div>
-        <div
+        {/* <div
           className='flex-grow relative overflow-hidden'
           style={{ maxHeight: '400px' }}
         >
@@ -139,14 +144,14 @@ export default async function Home() {
             className='absolute inset-0 bg-cover bg-center bg-fixed'
             style={{ backgroundImage: 'url("/images/parallax-temp.png")' }}
           ></div>
-        </div>
-        <div className='flex flex-col items-center mb-20'>
+        </div> */}
+        <div className='flex flex-col items-center'>
           <h2 className='text-6xl font-bold uppercase my-10'>listen now on</h2>
           <div className='flex justify-between w-3/4'>
             <div className='flex flex-col items-center'>
               <div className='text-3xl font-bold uppercase'>spotify</div>
               <Image
-                src='/images/spotify-logo.png'
+                src='/images/icons8-spotify-50.png'
                 alt='spotify'
                 width='50'
                 height='50'
@@ -155,7 +160,7 @@ export default async function Home() {
             <div className='flex flex-col items-center'>
               <div className='text-3xl font-bold uppercase'>youtube</div>
               <Image
-                src='/images/youtube-logo.png'
+                src='/images/icons8-youtube-50.png'
                 alt='youtube'
                 width='50'
                 height='50'
@@ -164,7 +169,7 @@ export default async function Home() {
             <div className='flex flex-col items-center'>
               <div className='text-3xl font-bold uppercase'>apple</div>
               <Image
-                src='/images/apple-podcast-logo.png'
+                src='/images/icons8-podcasts-48.png'
                 alt='apple podcast'
                 width='50'
                 height='50'
@@ -174,7 +179,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className='host-pics'>
+      {/* <section className='host-pics'>
         <div className='flex justify-between p-[50px]'>
           <div className='w-1/2'>
             <Image
@@ -199,7 +204,7 @@ export default async function Home() {
             />
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* <div className='flex justify-center mt-10 bg-primary'>
         <div className='p-5 flex flex-col'>

@@ -36,7 +36,7 @@ const Contact = () => {
       <form onSubmit={handleSubmit(processForm)}>
         <fieldset className='item-field flex gap-x-2.5 mb-4'>
           <legend className='pb-1'>
-            <div className='flex gap-x-2'>
+            <div className='flex gap-x-2 text-black'>
               <span className='text-lg font-medium'>Name</span>
               <span className='text-lg'>(required)</span>
             </div>

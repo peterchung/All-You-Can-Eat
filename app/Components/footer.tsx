@@ -60,9 +60,7 @@ const Footer = (): JSX.Element => {
               fontSize: 'clamp(2rem, 6vw, 10rem)',
               lineHeight: '1.25',
             }}
-          >
-            peter chung & sora ko
-          </p>
+          ></p>
         </div>
         <div className='py-4'>
           <hr ref={lineRef}></hr>
