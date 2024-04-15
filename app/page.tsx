@@ -93,13 +93,12 @@ export default async function Home() {
               what is all you can eat?
             </h1>
             <p className='max-w-md leading-relaxed text-gray-500 xl:text-lg'>
-              We explore and share our Asian American experiences. We created
-              this space to share our different opinions in a mostly
-              lighthearted way. The Asian American come up can be so comparable
-              yet at the same time so unique - same same but different*. We
-              encourage open dialogue and finding comfort over shared
-              experiences or discovering new ones. Have your fill however you
-              want. This is All You Can Eat.
+              We created this space to explore our experiences and share our
+              opinions in a mostly lighthearted way. The Asian American come up
+              can be so comparable, yet at the same time so unique - same same
+              but different. We encourage open dialogue and finding comfort over
+              shared experiences or discovering new ones. Welcome to All You Can
+              Eat.
             </p>
           </div>
 
