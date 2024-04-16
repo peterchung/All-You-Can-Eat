@@ -1,3 +1,4 @@
+import DirectoryHeader from '@/app/components/DirectoryHeader';
 import SlidingImage from '@/app/components/SlideImage';
 import { client, urlFor } from '@/app/lib/sanity';
 
@@ -18,15 +19,18 @@ const TheTeam = async () => {
   const imageUrl = Object.values(data);
 
   return (
-    <div className='flex py-20'>
-      <div className='mx-auto'>
-        <div>
-          <p>Click picture to read profile!</p>
-        </div>
-        <div className='flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4'>
-          {imageUrl.map((image, idx) => (
-            <SlidingImage key={idx} images={image} index={idx} />
-          ))}
+    <div>
+      <DirectoryHeader />
+      <div className='flex py-20'>
+        <div className='mx-auto'>
+          <div>
+            <p>Click picture to read profile!</p>
+          </div>
+          <div className='flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4'>
+            {imageUrl.map((image, idx) => (
+              <SlidingImage key={idx} images={image} index={idx} />
+            ))}
+          </div>
         </div>
       </div>
     </div>
