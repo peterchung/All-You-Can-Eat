@@ -5,14 +5,14 @@ import { usePathname } from 'next/navigation';
 export default function DirectoryHeader() {
   const pathname = usePathname();
 
-  const getHeaderByPathname = (pathname) => {
-    const pathMap = {
+  const getHeaderByPathname = (pathname: string) => {
+    const pathMap: { [key: string]: string } = {
       '/theteam': 'MEET THE TEAM',
       '/contact': 'CONTACT',
       '/meetups': 'MEETUPS',
       '/shop': 'SHOP',
     };
-
+    console.log('pathname type', pathname);
     return pathMap[pathname] || 'Error';
   };
 
