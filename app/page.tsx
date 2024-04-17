@@ -36,9 +36,9 @@ export default async function Home() {
       </section>
 
       <section className='mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8'>
-        <div className='mb-8 flex flex-wrap justify-between md:mb-16'>
-          <div className='mb-6 flex w-full flex-col justify-center sm:mb-12 lg:mb-0 lg:w-5/12 lg:pb-24 lg:pt-48'>
-            <h1 className='mb-4 text-4xl font-bold sm:text-5xl md:mb-8 md:text-6xl uppercase'>
+        <div className='my-auto flex flex-wrap justify-between'>
+          <div className='mb-2 flex w-full flex-col justify-center sm:mb-8 lg:mb-0 lg:w-5/12 lg:py-24'>
+            <h1 className='mb-4 mt-4 text-4xl font-bold sm:text-5xl md:mb-6 lg:mt-0 md:text-6xl uppercase'>
               what is all you can eat?
             </h1>
             <p className='max-w-md leading-relaxed text-gray-500 xl:text-lg'>
@@ -52,7 +52,7 @@ export default async function Home() {
           </div>
 
           <div className='mb-12 mt-12 flex w-full md:mb-16 lg:w-7/12'>
-            <div className='relative left-12 top-12 z-10 -ml-12 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:left-16 md:top-16 lg:ml-0'>
+            <div className='overflow-hidden rounded-lg bg-gray-100 shadow-lg'>
               <Image
                 src={urlFor(data.image1).url()}
                 alt='Host Peter'
