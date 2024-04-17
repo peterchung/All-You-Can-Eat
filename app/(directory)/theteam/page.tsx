@@ -23,8 +23,8 @@ const TheTeam = async () => {
       <DirectoryHeader />
       <div className='flex py-20'>
         <div className='mx-auto'>
-          <div>
-            <p>Click picture to read profile!</p>
+          <div className='flex justify-center items-center font-bold text-lg sm:text-xl md:text-2xl pb-8'>
+            <p>Click the picture to read our profile!</p>
           </div>
           <div className='flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4'>
             {imageUrl.map((image, idx) => (
