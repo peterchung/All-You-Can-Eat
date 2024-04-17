@@ -9,7 +9,7 @@ export default function DirectoryHeader() {
     const pathMap: { [key: string]: string } = {
       '/theteam': 'MEET THE TEAM',
       '/contact': 'CONTACT',
-      '/meetups': 'MEETUPS',
+      '/meetups': 'DISCORD MEETUPS',
       '/shop': 'SHOP',
     };
     console.log('pathname type', pathname);
@@ -22,7 +22,9 @@ export default function DirectoryHeader() {
       <hr className='border border-white w-11/12 mx-auto' />
 
       <div className='w-11/12 mx-auto'>
-        <h1 className='py-6 text-6xl font-bold'>{header}</h1>
+        <h1 className='py-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold'>
+          {header}
+        </h1>
       </div>
     </div>
   );
