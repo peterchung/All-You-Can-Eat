@@ -32,7 +32,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className='contact-form-wrapper mt-40 mb-20 flex flex-col items-center'>
+    <div className='contact-form-wrapper flex flex-col items-center'>
       <form onSubmit={handleSubmit(processForm)}>
         <fieldset className='item-field flex gap-x-2.5 mb-4'>
           <legend className='pb-1'>
@@ -177,7 +177,7 @@ const ContactForm = () => {
         <button
           type='submit'
           disabled={isSubmitting}
-          className='bg-gray-200 font-bold text-black uppercase py-4 px-6 rounded hover:opacity-50'
+          className='w-full bg-primary font-bold text-white uppercase py-4 px-6 rounded hover:opacity-50'
         >
           {isSubmitting ? 'Submitting...' : 'Submit'}
         </button>
