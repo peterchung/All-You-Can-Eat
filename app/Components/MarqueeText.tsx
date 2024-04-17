@@ -1,11 +1,23 @@
-export default function MarqueeText() {
+import { client, urlFor } from '../lib/sanity';
+
+const getData = async () => {
+  const query = "*[_type == 'meetupsImages'][0]";
+
+  const data = await client.fetch(query);
+
+  return data;
+};
+
+export default async function MarqueeText() {
+  const data = await getData();
+
   return (
     <div
       className='h-screen bg-cover bg-center'
-      style={{ backgroundImage: 'url("/images/meetups.jpeg")' }}
+      style={{ backgroundImage: `url(${urlFor(data.image1).url()})` }}
     >
       <div className='relative flex overflow-x-hidden'>
-        <div className='py-12 animate-marquee whitespace-nowrap uppercase'>
+        <div className='py-7 animate-marquee whitespace-nowrap uppercase'>
           <span className='text-4xl mx-4'>hello</span>
           <span className='text-4xl mx-4'>안녕</span>
           <span className='text-4xl mx-4'>こんにちは</span>
@@ -22,7 +34,7 @@ export default function MarqueeText() {
           <span className='text-4xl mx-4'>नमस्ते</span>
         </div>
 
-        <div className='absolute top-0 py-12 animate-marquee2 whitespace-nowrap uppercase'>
+        <div className='absolute top-0 py-7 animate-marquee2 whitespace-nowrap uppercase'>
           <span className='text-4xl mx-4'>hello</span>
           <span className='text-4xl mx-4'>안녕</span>
           <span className='text-4xl mx-4'>こんにちは</span>
@@ -39,8 +51,23 @@ export default function MarqueeText() {
           <span className='text-4xl mx-4'>नमस्ते</span>
         </div>
       </div>
-
-      <h2 className='uppercase py-4'>discord meetup dates coming soon</h2>
+      <div className='w-11/12 h-5/6 mx-auto flex flex-col justify-start'>
+        <h2 className=' uppercase py-4 text-4xl font-semibold'>
+          dates coming soon
+        </h2>
+        <p className='w-1/5 text-gray-500 leading-relaxed xl:text-lg'>
+          Join our Discord Community to chat, share interests, play games, watch
+          movies, and support each other's passions! Our community is meant for
+          members to meet new friends, engage in discussion, and encourage one
+          another in our endeavors. Grow with us as we support each other on our
+          collective journey!
+        </p>
+        <div className='py-4'>
+          <button className='bg-gray-200 hover:opacity-50 font-bold text-black py-4 px-6 rounded-full uppercase'>
+            join server
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
