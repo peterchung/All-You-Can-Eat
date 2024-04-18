@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ShoppingBag } from 'lucide-react';
 import { useShoppingCart } from 'use-shopping-cart';
+import { useEffect, useState } from 'react';
 
 const links = [
   { name: 'THE TEAM', href: '/theteam' },
@@ -13,14 +14,39 @@ const links = [
   { name: 'SHOP', href: '/shop' },
 ];
 
-//TODO: Add responsive design to navbar so it disappears when scrolling down and re-appears when scrolling up
+//TODO: Hamburger menu for responsive design
 
 export default function Navbar() {
   const pathname = usePathname();
   const { handleCartClick } = useShoppingCart();
+  const [showNav, setShow] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY < lastScrollY) {
+        setShow(true); // show the navbar when scrolling up
+      } else if (currentScrollY > lastScrollY) {
+        setShow(false); // hide the navbar when scrolling down
+      }
+      setLastScrollY(currentScrollY); // update the last scroll position
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY]);
+
   return (
-    <header>
-      <div className='flex justify-between items-center px-4 py-4 sm:px-6 lg:max-w-full w-full fixed top-0 z-50'>
+    <nav
+      className={`fixed top-0 left-0 w-full transition-transform duration-300 ease-in-out z-50 ${
+        showNav ? 'translate-y-0' : '-translate-y-full'
+      }`}
+    >
+      <div className='flex justify-between items-center px-4 py-4 sm:px-6 lg:max-w-full w-full'>
         <Link href='/'>
           <Image
             src='/images/AYCE-Logo.png'
@@ -60,6 +86,6 @@ export default function Navbar() {
           </button>
         </div>
       </div>
-    </header>
+    </nav>
   );
 }
