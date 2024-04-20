@@ -14,12 +14,20 @@ export const dynamic = 'force-dynamic';
 export default async function Home() {
   const data = await getData();
 
+  //TODO: test using image component as background instead of style to render image faster on initial load
+
   return (
     <main>
-      <section
-        className='landing-page flex flex-col h-screen bg-cover bg-center'
-        style={{ backgroundImage: `url(${urlFor(data.image2).url()})` }}
-      >
+      <section className='landing-page relative flex flex-col h-screen'>
+        <div className='absolute inset-0'>
+          <Image
+            src={urlFor(data.image2).url()}
+            alt='Landing Background'
+            fill={true}
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
+          />
+        </div>
+
         <div className='relative'></div>
         <div className='mb-20 z-10'>
           <div className='mx-auto max-w-lg absolute top-20 left-8'>
@@ -55,7 +63,7 @@ export default async function Home() {
             <div className='overflow-hidden rounded-lg bg-gray-100 shadow-lg'>
               <Image
                 src={urlFor(data.image1).url()}
-                alt='Host Peter'
+                alt='Dinner Image'
                 className='h-full w-full object-cover object-center'
                 width={700}
                 height={700}
@@ -66,15 +74,21 @@ export default async function Home() {
         </div>
       </section>
 
-      <section
-        className='welcome-and-listen flex flex-col h-screen bg-cover bg-center text-amber-300'
-        style={{ backgroundImage: `url(${urlFor(data.image3).url()})` }}
-      >
-        <div className='flex justify-center text-7xl font-bold uppercase mt-10'>
+      <section className='welcome-and-listen relative flex flex-col h-screen text-amber-300'>
+        <div className='absolute inset-0'>
+          <Image
+            src={urlFor(data.image3).url()}
+            alt='Landing Background'
+            fill={true}
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
+          />
+        </div>
+
+        <div className='flex justify-center text-7xl font-bold uppercase mt-10 z-10'>
           <h1>welcome to all you can eat</h1>
         </div>
 
-        <div className='flex flex-col items-center'>
+        <div className='flex flex-col items-center z-10'>
           <h2 className='text-6xl font-bold uppercase my-10'>listen now on</h2>
           <div className='flex justify-between w-3/4'>
             <div className='flex flex-col items-center'>
