@@ -7,18 +7,15 @@ import { useEffect, useRef } from 'react';
 import { useShoppingCart } from 'use-shopping-cart';
 
 export default function StripeSuccess() {
-  const { clearCart } = useShoppingCart();
-  const hasCleared = useRef(false);
+  const { clearCart, cartCount } = useShoppingCart();
 
-  //TODO: clear the cart upon successful payment
   //TODO: create session so that this page is only accessible after order has been processed and can't be reached directly
-  // useEffect(() => {
-  //   console.log('has cleared should be false');
-  //   if (!hasCleared.current) {
-  //     clearCart();
-  //     hasCleared.current = true;
-  //   }
-  // }, [clearCart]);
+
+  useEffect(() => {
+    if (cartCount! > 0) {
+      clearCart();
+    }
+  }, [cartCount, clearCart]);
 
   return (
     <div className='h-screen'>
