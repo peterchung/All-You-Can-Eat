@@ -14,7 +14,24 @@ const links = [
   { name: 'SHOP', href: '/shop' },
 ];
 
+const debounce = <T extends (...args: any[]) => any>(
+  func: T,
+  wait: number
+): ((...args: any[]) => void) => {
+  let timeout: NodeJS.Timeout | undefined;
+  return function executedFunc(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+};
+
 //TODO: Hamburger menu for responsive design
+//TODO: outline navbar text with white
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -22,23 +39,29 @@ export default function Navbar() {
   const [showNav, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY < lastScrollY) {
-        setShow(true); // show the navbar when scrolling up
-      } else if (currentScrollY > lastScrollY) {
-        setShow(false); // hide the navbar when scrolling down
-      }
-      setLastScrollY(currentScrollY); // update the last scroll position
-    };
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+    if (currentScrollY < lastScrollY) {
+      setShow(true); // show the navbar when scrolling up
+    } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      setShow(false); // hide the navbar when scrolling down
+    }
+    setLastScrollY(currentScrollY); // update the last scroll position
+  };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+  const debouncedHandleScroll = debounce(handleScroll, 100);
+
+  useEffect(() => {
+    window.addEventListener('scroll', debouncedHandleScroll, { passive: true });
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', debouncedHandleScroll);
     };
-  }, [lastScrollY]);
+    // deboucnedHandleScroll included in dependency array because it holds the debounced version of handleScroll.
+    // Each time navbar component re-renders and reached the point where debouncedHandleScroll is defined, it creates a new instance of the debounced function, because debounchedHandleScroll depends on handleScroll function
+    // handleScroll updates lastScrollY and handleScroll is part of the debounce closure. When lastScrollY changes, a new handleScroll function is created to capture the updated state.
+    // Since debounceHandleScroll wraps handleScroll, it needs to be updated as well to incorporate the latest handleScroll function. Otherwise the old handleScroll with the last state lastScrollY could be used leading to wrong behavior
+  }, [lastScrollY, debouncedHandleScroll]);
 
   return (
     <nav
