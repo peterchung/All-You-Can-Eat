@@ -14,8 +14,6 @@ export const dynamic = 'force-dynamic';
 export default async function Home() {
   const data = await getData();
 
-  //TODO: test using image component as background instead of style to render image faster on initial load
-
   return (
     <main>
       <section className='landing-page relative flex flex-col h-screen'>
