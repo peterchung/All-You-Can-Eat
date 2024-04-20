@@ -91,7 +91,7 @@ export default function Navbar() {
                   </Link>
                 ) : (
                   <Link
-                    className='text-lg font-bold text-blue-900 transition duration-100 hover:text-primary'
+                    className='text-lg font-bold text-blue-900 transition duration-100 hover:text-sky-400'
                     href={link.href}
                   >
                     {link.name}
@@ -101,7 +101,7 @@ export default function Navbar() {
             ))}
           </nav>
           <button
-            className='flex flex-col items-center gap-y-1.5 h-12 w-12'
+            className='flex flex-col items-center gap-y-1.5 h-12 w-12 hover:text-sky-400'
             onClick={() => handleCartClick()}
           >
             <ShoppingBag />
