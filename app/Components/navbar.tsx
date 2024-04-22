@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { Menu, ShoppingBag } from 'lucide-react';
 import { useShoppingCart } from 'use-shopping-cart';
 import { useEffect, useState } from 'react';
+import MenuModal from './MenuModal';
 
 const links = [
   { name: 'THE TEAM', href: '/theteam' },
@@ -40,6 +41,15 @@ export default function Navbar() {
   const [showNav, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [showMenu, setMenu] = useState(false);
+  const [menuModalOpen, setMenuModalOpen] = useState(false);
+
+  const openMenuModal = () => {
+    setMenuModalOpen(true);
+  };
+
+  const closeMenuModal = () => {
+    setMenuModalOpen(false);
+  };
 
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
@@ -139,6 +149,7 @@ export default function Navbar() {
           <button className='flex h-12 w-12' onClick={openMenuModal}>
             <Menu />
           </button>
+          <MenuModal isOpen={menuModalOpen} handleClose={closeMenuModal} />
         </div>
       </div>
     </header>
