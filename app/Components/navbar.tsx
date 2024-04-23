@@ -149,11 +149,7 @@ export default function Navbar() {
           <button className='flex h-12 w-12' onClick={openMenuModal}>
             <Menu />
           </button>
-          <MenuModal
-            isOpen={menuModalOpen}
-            handleClose={closeMenuModal}
-            links={links}
-          />
+          <MenuModal isOpen={menuModalOpen} handleClose={closeMenuModal} />
         </div>
       </div>
     </header>

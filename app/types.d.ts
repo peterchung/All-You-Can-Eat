@@ -39,6 +39,11 @@ export interface ProductCart {
   price_id: string;
 }
 
+export interface menuModalProps {
+  isOpen: boolean;
+  handleClose: () => void;
+}
+
 // export interface FormResultError {
 //   emailSent: boolean;
 //   errors: ValidationErrors;

@@ -4,6 +4,7 @@ import { Sheet, SheetContent } from '@/components/ui/sheet';
 import Link from 'next/link';
 import { useShoppingCart } from 'use-shopping-cart';
 import { usePathname } from 'next/navigation';
+import { menuModalProps } from '../types';
 
 const links = [
   { name: 'HOME', href: '/' },
@@ -13,7 +14,7 @@ const links = [
   { name: 'SHOP', href: '/shop' },
 ];
 
-export default function MenuModal({ isOpen, handleClose }) {
+export default function MenuModal({ isOpen, handleClose }: menuModalProps) {
   const { handleCartClick } = useShoppingCart();
   const pathname = usePathname();
 
