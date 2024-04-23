@@ -29,7 +29,7 @@ export default async function Home() {
         <div className='relative'></div>
         <div className='mb-20 z-10'>
           <div className='mx-auto max-w-lg absolute top-20 left-8'>
-            <div className='font-bold text-blue-900 text-5xl my-8 uppercase'>
+            <div className='font-bold text-blue-900 text-2xl md:text-4xl lg:text-5xl mt-8 mb-4 md:mb-8 uppercase'>
               <h3>a podcast about anything, really. sort of.</h3>
             </div>
             <div>
@@ -43,11 +43,11 @@ export default async function Home() {
 
       <section className='mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8'>
         <div className='my-auto flex flex-wrap justify-between'>
-          <div className='mb-2 flex w-full flex-col justify-center sm:mb-8 lg:mb-0 lg:w-5/12 lg:py-24'>
-            <h1 className='mb-4 mt-4 text-4xl font-bold sm:text-5xl md:mb-6 lg:mt-0 md:text-6xl uppercase'>
+          <div className='flex w-full flex-col justify-center lg:mb-0 lg:w-5/12 lg:py-24'>
+            <h1 className='mb-4 mt-6 text-5xl font-bold md:mb-6 lg:mt-0 md:text-6xl uppercase'>
               what is all you can eat?
             </h1>
-            <p className='max-w-md leading-relaxed text-gray-500 xl:text-lg'>
+            <p className='max-w-full leading-relaxed text-gray-500 xl:text-lg'>
               We created this space to explore our experiences and share our
               opinions in a mostly lighthearted way. The Asian American come up
               can be so comparable, yet at the same time so unique - same same
@@ -82,15 +82,21 @@ export default async function Home() {
           />
         </div>
 
-        <div className='flex justify-center text-7xl font-bold uppercase mt-10 z-10'>
-          <h1>welcome to all you can eat</h1>
+        <div className='flex flex-col items-center justify-center w-full mt-10 z-10'>
+          <h1 className='text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase'>
+            welcome to all you can eat
+          </h1>
         </div>
 
         <div className='flex flex-col items-center z-10'>
-          <h2 className='text-6xl font-bold uppercase my-10'>listen now on</h2>
+          <h2 className='text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold uppercase my-10'>
+            listen now on
+          </h2>
           <div className='flex justify-between w-3/4'>
             <div className='flex flex-col items-center'>
-              <div className='text-3xl font-bold uppercase'>spotify</div>
+              <div className='text-md md:text-2xl xl:text-3xl font-bold uppercase'>
+                spotify
+              </div>
               <Image
                 src='/images/icons8-spotify-50.png'
                 alt='spotify'
@@ -99,7 +105,9 @@ export default async function Home() {
               />
             </div>
             <div className='flex flex-col items-center'>
-              <div className='text-3xl font-bold uppercase'>youtube</div>
+              <div className='text-md md:text-2xl xl:text-3xl font-bold uppercase'>
+                youtube
+              </div>
               <Image
                 src='/images/icons8-youtube-50.png'
                 alt='youtube'
@@ -108,7 +116,9 @@ export default async function Home() {
               />
             </div>
             <div className='flex flex-col items-center'>
-              <div className='text-3xl font-bold uppercase'>apple</div>
+              <div className='text-md md:text-2xl xl:text-3xl font-bold uppercase'>
+                apple
+              </div>
               <Image
                 src='/images/icons8-podcasts-48.png'
                 alt='apple podcast'
