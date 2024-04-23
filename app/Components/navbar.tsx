@@ -59,7 +59,6 @@ export default function Navbar() {
     setLastScrollY(currentScrollY); // update the last scroll position
   };
 
-  //TODO: debounce handleResize
   const handleResize = () => {
     if (window.innerWidth < 768) {
       setMenu(true);
@@ -69,21 +68,22 @@ export default function Navbar() {
   };
 
   const debouncedHandleScroll = debounce(handleScroll, 100);
+  const debouncedHandleResize = debounce(handleResize, 100);
 
   useEffect(() => {
     window.addEventListener('scroll', debouncedHandleScroll, { passive: true });
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', debouncedHandleResize);
 
     return () => {
       window.removeEventListener('scroll', debouncedHandleScroll);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', debouncedHandleResize);
     };
 
     // deboucnedHandleScroll included in dependency array because it holds the debounced version of handleScroll.
     // Each time navbar component re-renders and reached the point where debouncedHandleScroll is defined, it creates a new instance of the debounced function, because debounchedHandleScroll depends on handleScroll function
     // handleScroll updates lastScrollY and handleScroll is part of the debounce closure. When lastScrollY changes, a new handleScroll function is created to capture the updated state.
     // Since debounceHandleScroll wraps handleScroll, it needs to be updated as well to incorporate the latest handleScroll function. Otherwise the old handleScroll with the last state lastScrollY could be used leading to wrong behavior
-  }, [lastScrollY, debouncedHandleScroll, showMenu]);
+  }, [lastScrollY, debouncedHandleScroll, showMenu, debouncedHandleResize]);
 
   return (
     <header
