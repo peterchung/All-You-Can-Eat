@@ -102,7 +102,7 @@ export default function Navbar() {
             height='143'
           />
         </Link>
-        <div className='flex gap-12'>
+        <div className='flex'>
           <nav className='hidden gap-12 md:flex 2xl:ml-16 font-bold'>
             {links.map((link, idx) => (
               <div key={idx}>
@@ -149,7 +149,11 @@ export default function Navbar() {
           <button className='flex h-12 w-12' onClick={openMenuModal}>
             <Menu />
           </button>
-          <MenuModal isOpen={menuModalOpen} handleClose={closeMenuModal} />
+          <MenuModal
+            isOpen={menuModalOpen}
+            handleClose={closeMenuModal}
+            links={links}
+          />
         </div>
       </div>
     </header>
