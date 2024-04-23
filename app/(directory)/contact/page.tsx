@@ -14,12 +14,13 @@ const getData = async () => {
 const Contact = async () => {
   const data = await getData();
 
+  //TODO: fix view height when dimensions are ipad pro
   return (
     <div>
       <DirectoryHeader />
       <div className='mx-auto max-w-2xl lg:max-w-7xl px-4 sm:px-6 py-10'>
         <div className='my-auto flex flex-wrap justify-between'>
-          <div className='mb-6 flex w-full sm:w-1/2 flex-col justify-center items-center sm:mb-12 lg:w-5/12'>
+          <div className='mb-6 flex w-full flex-col justify-center items-center sm:mb-12 lg:w-5/12'>
             <ContactForm />
           </div>
 

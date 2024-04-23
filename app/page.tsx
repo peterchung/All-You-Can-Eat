@@ -9,6 +9,8 @@ const getData = async () => {
   return data;
 };
 
+//TODO: Add onclick to watch now directing to youtube, and onclick to apple, spotify, youtube buttons
+
 export const dynamic = 'force-dynamic';
 
 export default async function Home() {
