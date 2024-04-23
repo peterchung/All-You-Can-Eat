@@ -31,8 +31,6 @@ const debounce = <T extends (...args: any[]) => any>(
   };
 };
 
-//TODO: Hamburger menu for responsive design. Hamburger menu should start in line 110 since showNav affects <nav>
-// hamburger menu should be a modal that opens up to half the page at a certain size and takes up the whole screen at the smallest viewscreen size
 //TODO: outline navbar text with white
 
 export default function Navbar() {
@@ -123,13 +121,7 @@ export default function Navbar() {
                 )}
               </div>
             ))}
-            {/* <button
-              className='flex flex-col items-center gap-y-1.5 h-12 w-12 hover:text-sky-400'
-              onClick={() => handleCartClick()}
-            >
-              <ShoppingBag />
-              <span className='hidden text-xs font-bold sm:block'>Cart</span>
-            </button> */}
+
             <button
               className='md:flex h-12 w-12 hover:text-sky-400'
               onClick={() => handleCartClick()}
@@ -137,13 +129,6 @@ export default function Navbar() {
               <ShoppingBag />
             </button>
           </nav>
-          {/* <button
-            className='flex flex-col items-center gap-y-1.5 h-12 w-12 hover:text-sky-400'
-            onClick={() => handleCartClick()}
-          >
-            <ShoppingBag />
-            <span className='hidden text-xs font-bold sm:block'>Cart</span>
-          </button> */}
         </div>
         <div className={`${showMenu ? '' : 'hidden'}`}>
           <button className='flex h-12 w-12' onClick={openMenuModal}>
