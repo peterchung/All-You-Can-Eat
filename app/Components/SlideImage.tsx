@@ -34,19 +34,20 @@ const SlidingImage = ({ images, index }: imageAppProps & { index: number }) => {
             src='/images/ig-logo-blue.png'
             alt='AYCE logo'
             width='45'
-            height='4'
+            height='45'
           />
         </Link>
       </div>
       <div
         className='relative overflow-hidden cursor-pointer'
         onClick={() => setShowText(!showText)}
+        style={{ height: '602px', width: '285px' }}
       >
         <div
           className={`absolute inset-0 transition-transform duration-500 ease-in-out ${
             showText ? '-translate-x-full' : 'translate-x-0'
           }`}
-          style={{ position: 'relative', height: '602px', width: '300px' }}
+          // style={{ position: 'relative', height: '602px', width: '300px' }}
         >
           <Image src={urlFor(images).url()} alt='photo' fill={true} priority />
         </div>
@@ -56,7 +57,7 @@ const SlidingImage = ({ images, index }: imageAppProps & { index: number }) => {
           }`}
         >
           <h3 className='text-2xl font-bold py-4'>{displayedName}</h3>
-          <div>
+          <div className='max-w-[290px]'>
             <p className='px-4'>{displayedText}</p>
           </div>
         </div>
