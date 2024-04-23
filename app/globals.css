@@ -58,6 +58,12 @@ body {
   /* color: rgb(250 204 21); */
 }
 
+.text-outline {
+  color: #4b5563; /* Main text color */
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+    1px 1px 0 #fff; /* White outline */
+}
+
 @layer base {
   * {
     @apply border-border;

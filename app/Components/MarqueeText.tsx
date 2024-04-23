@@ -10,7 +10,7 @@ const getData = async () => {
 
 export default async function MarqueeText() {
   const data = await getData();
-
+  //TODO: Add onClick to open new tab to join discord server
   return (
     <div
       className='h-screen bg-cover bg-center'
@@ -51,11 +51,11 @@ export default async function MarqueeText() {
           <span className='text-4xl mx-4'>नमस्ते</span>
         </div>
       </div>
-      <div className='w-11/12 h-5/6 mx-auto flex flex-col justify-start'>
-        <h2 className=' uppercase py-4 text-4xl font-semibold'>
+      <div className='w-11/12 h-5/6 mx-auto flex flex-col justify-start items-center'>
+        <h2 className=' uppercase py-4 text-2xl md:text-4xl font-semibold'>
           dates coming soon
         </h2>
-        <p className='w-1/5 text-gray-500 leading-relaxed xl:text-lg'>
+        <p className='w-3/5 text-outline font-semibold leading-relaxed text-sm md:text-lg'>
           Join our Discord Community to chat, share interests, play games, watch
           movies, and support each other's passions! Our community is meant for
           members to meet new friends, engage in discussion, and encourage one
