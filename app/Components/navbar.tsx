@@ -31,8 +31,6 @@ const debounce = <T extends (...args: any[]) => any>(
   };
 };
 
-//TODO: outline navbar text with white
-
 export default function Navbar() {
   const pathname = usePathname();
   const { handleCartClick } = useShoppingCart();
