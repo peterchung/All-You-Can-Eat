@@ -8,7 +8,7 @@ export interface FormType {
   message: 'string';
 }
 
-export interface simplifiedProduct {
+export interface simplifiedProduct extends fullProduct {
   _id: string;
   price: number;
   name: string;
@@ -37,6 +37,7 @@ export interface ProductCart {
   currency: string;
   image: any;
   price_id: string;
+  className: string;
 }
 
 export interface menuModalProps {

@@ -32,9 +32,9 @@ export default async function ProductPage({
   const data: fullProduct = await getData(params.slug);
 
   return (
-    <div className=''>
+    <div className='mt-20 mb-8'>
       <div className='mx-auto max-w-screen-xl px-4 md:px-8'>
-        <div className='grid gap-8 md:grid-cols-2 sm:py-16'>
+        <div className='grid gap-8 md:grid-cols-2 py-16'>
           <ImageGallery images={data.images} />
 
           <div className=''>
@@ -53,6 +53,7 @@ export default async function ProductPage({
                 price={data.price}
                 key={data._id}
                 price_id={data.price_id}
+                className=''
               />
               {/* <button className='w-1/2 rounded-2xl bg-blue-500 border-2 border-blue-500 shadow-lg py-2 mb-4'>
                 Checkout now
@@ -64,6 +65,7 @@ export default async function ProductPage({
                 name={data.name}
                 price={data.price}
                 price_id={data.price_id}
+                className=''
               />
             </div>
             <div>

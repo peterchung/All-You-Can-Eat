@@ -29,7 +29,7 @@ export default function CheckoutNow({
 
   return (
     <button
-      className='w-1/2 rounded-2xl bg-blue-500 border-2 border-blue-500 shadow-lg py-2 mb-4'
+      className='w-full sm:w-1/2 rounded-2xl bg-blue-500 border-2 border-blue-500 shadow-lg text-white font-semibold py-2 mb-4'
       onClick={() => {
         buyNow(product.price_id);
       }}

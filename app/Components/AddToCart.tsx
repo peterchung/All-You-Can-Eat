@@ -11,6 +11,7 @@ export default function AddToCart({
   currency,
   image,
   price_id,
+  className,
 }: ProductCart) {
   const { addItem, handleCartClick } = useShoppingCart();
   const product = {
@@ -24,7 +25,7 @@ export default function AddToCart({
 
   return (
     <button
-      className='w-1/2 rounded-2xl bg-white border-2 border-blue-500 shadow-lg py-2 mb-4'
+      className={`w-full sm:w-1/2 rounded-2xl bg-white border-2 border-blue-500 shadow-lg font-semibold text-primary py-2 mb-4 ${className}`}
       onClick={() => {
         addItem(product), handleCartClick();
       }}
