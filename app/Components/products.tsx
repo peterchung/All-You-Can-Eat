@@ -44,6 +44,7 @@ export default async function Products() {
                   className='text-black-500 w-full h-full object-cover object-center rounded-lg lg:h-full lg:w-full'
                   width={300}
                   height={300}
+                  priority
                 />
                 <div className='my-4 flex justify-between font-semibold'>
                   <h3 className=''>{product.name}</h3>

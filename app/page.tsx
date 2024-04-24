@@ -25,6 +25,7 @@ export default async function Home() {
             alt='Landing Background'
             fill={true}
             style={{ objectFit: 'cover', objectPosition: 'center' }}
+            priority
           />
         </div>
 
@@ -81,6 +82,7 @@ export default async function Home() {
             alt='Landing Background'
             fill={true}
             style={{ objectFit: 'cover', objectPosition: 'center' }}
+            priority
           />
         </div>
 
