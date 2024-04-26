@@ -7,6 +7,8 @@ import { Menu, ShoppingBag } from 'lucide-react';
 import { useShoppingCart } from 'use-shopping-cart';
 import { useEffect, useState } from 'react';
 import MenuModal from './MenuModal';
+import { imageAppProps } from '../types';
+import { urlFor } from '../lib/sanity';
 
 const links = [
   { name: 'THE TEAM', href: '/theteam' },
@@ -31,7 +33,7 @@ const debounce = <T extends (...args: any[]) => any>(
   };
 };
 
-export default function Navbar() {
+export default function Navbar({ images }: imageAppProps) {
   const pathname = usePathname();
   const { handleCartClick } = useShoppingCart();
   const [showNav, setShow] = useState(true);
@@ -92,7 +94,7 @@ export default function Navbar() {
       <div className='flex justify-between items-center px-4 py-4 sm:px-6 lg:max-w-full w-full'>
         <Link href='/'>
           <Image
-            src='/images/AYCE-Logo.png'
+            src={urlFor(images.ayceLogo).url()}
             alt='AYCE logo'
             width='150'
             height='143'
