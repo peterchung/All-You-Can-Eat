@@ -87,7 +87,7 @@ export default async function Home() {
         </div>
 
         <div className='flex flex-col items-center justify-center w-full mt-10 z-10'>
-          <h1 className='text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase'>
+          <h1 className='text-xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase'>
             welcome to all you can eat
           </h1>
         </div>
