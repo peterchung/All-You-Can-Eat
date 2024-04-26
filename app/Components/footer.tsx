@@ -3,8 +3,10 @@
 import { Copyright } from 'lucide-react';
 import Image from 'next/image';
 import { useRef, useLayoutEffect } from 'react';
+import { urlFor } from '../lib/sanity';
+import { imageAppProps } from '../types';
 
-const Footer = (): JSX.Element => {
+const Footer = ({ images }: imageAppProps): JSX.Element => {
   const text1Ref = useRef<HTMLParagraphElement | null>(null);
   const text2Ref = useRef<HTMLParagraphElement | null>(null);
   const lineRef = useRef<HTMLHRElement | null>(null);
@@ -71,12 +73,6 @@ const Footer = (): JSX.Element => {
         </div>
         <div ref={contactRef} className='contact-wrapper flex justify-between'>
           <div className='flex flex-col'>
-            {/* <h3
-              className='mb-5 uppercase'
-              style={{ fontSize: 'clamp(2rem, 2vw, 6rem' }}
-            >
-              contact
-            </h3> */}
             <div className='flex'>
               <Copyright className='w-5 h-5' />
               <p className='text-sm pl-2'>2024, All You Can Eat.</p>
@@ -95,18 +91,32 @@ const Footer = (): JSX.Element => {
                 rel='noopener'
               >
                 <Image
-                  src='/images/ig-logo.png'
+                  src={urlFor(images.instagram).url()}
                   alt='instagram'
                   width='36'
                   height='36'
                 />
               </a>
             </div>
-            <div className='mr-4'>
+            <div className='mr-4 hover:cursor-pointer'>
               <a>
                 <Image
-                  src='/images/tiktok-logo.png'
+                  src={urlFor(images.discord).url()}
                   alt='tiktok'
+                  width='36'
+                  height='36'
+                />
+              </a>
+            </div>
+            <div className='mr-4 hover:cursor-pointer'>
+              <a
+                href='https://www.instagram.com/aycepod/'
+                target='_blank'
+                rel='noopener'
+              >
+                <Image
+                  src={urlFor(images.tiktok).url()}
+                  alt='instagram'
                   width='36'
                   height='36'
                 />
@@ -119,7 +129,7 @@ const Footer = (): JSX.Element => {
                 rel='noopener'
               >
                 <Image
-                  src='/images/twitterx-logo.png'
+                  src={urlFor(images.twitter).url()}
                   alt='twitterx'
                   width='36'
                   height='36'
