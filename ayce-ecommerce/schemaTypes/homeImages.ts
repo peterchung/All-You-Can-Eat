@@ -18,5 +18,20 @@ export default {
       type: 'image',
       title: 'Third Image',
     },
+    {
+      name: 'image4',
+      type: 'image',
+      title: 'Spotify Icon',
+    },
+    {
+      name: 'image5',
+      type: 'image',
+      title: 'Youtube Icon',
+    },
+    {
+      name: 'image6',
+      type: 'image',
+      title: 'Apple Pod Icon',
+    },
   ],
 }

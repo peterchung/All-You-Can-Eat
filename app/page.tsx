@@ -102,7 +102,7 @@ export default async function Home() {
                 spotify
               </div>
               <Image
-                src='/images/icons8-spotify-50.png'
+                src={urlFor(data.image4).url()}
                 alt='spotify'
                 width='50'
                 height='50'
@@ -113,7 +113,7 @@ export default async function Home() {
                 youtube
               </div>
               <Image
-                src='/images/icons8-youtube-50.png'
+                src={urlFor(data.image5).url()}
                 alt='youtube'
                 width='50'
                 height='50'
@@ -124,7 +124,7 @@ export default async function Home() {
                 apple
               </div>
               <Image
-                src='/images/icons8-podcasts-48.png'
+                src={urlFor(data.image6).url()}
                 alt='apple podcast'
                 width='50'
                 height='50'
