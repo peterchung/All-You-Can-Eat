@@ -63,10 +63,6 @@ export default async function Products() {
                   className='sm:w-full'
                 />
               </div>
-
-              {/* <button className='w-full rounded-full bg-white border-2 border-blue-500 shadow-lg py-2 mt-4'>
-                Add to cart
-              </button> */}
             </div>
           ))}
         </div>

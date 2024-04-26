@@ -64,10 +64,10 @@ export default async function MarqueeText() {
         </h2>
         <p className='w-3/5 text-outline font-semibold leading-relaxed text-sm md:text-lg z-10'>
           Join our Discord Community to chat, share interests, play games, watch
-          movies, and support each other's passions! Our community is meant for
-          members to meet new friends, engage in discussion, and encourage one
-          another in our endeavors. Grow with us as we support each other on our
-          collective journey!
+          movies, and support each other&#39;s passions! Our community is meant
+          for members to meet new friends, engage in discussion, and encourage
+          one another in our endeavors. Grow with us as we support each other on
+          our collective journey!
         </p>
         <div className='py-4 z-10'>
           <button className='bg-gray-200 hover:opacity-50 font-bold text-black py-4 px-6 rounded-full uppercase'>
