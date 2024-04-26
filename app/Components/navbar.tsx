@@ -36,9 +36,9 @@ const debounce = <T extends (...args: any[]) => any>(
 export default function Navbar({ images }: imageAppProps) {
   const pathname = usePathname();
   const { handleCartClick } = useShoppingCart();
-  const [showNav, setShow] = useState(true);
+  const [showNav, setShowNav] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [showMenu, setMenu] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
   const [menuModalOpen, setMenuModalOpen] = useState(false);
 
   const openMenuModal = () => {
@@ -52,25 +52,27 @@ export default function Navbar({ images }: imageAppProps) {
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
     if (currentScrollY < lastScrollY) {
-      setShow(true); // show the navbar when scrolling up
+      setShowNav(true); // show the navbar when scrolling up
     } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
-      setShow(false); // hide the navbar when scrolling down
+      setShowNav(false); // hide the navbar when scrolling down
     }
     setLastScrollY(currentScrollY); // update the last scroll position
   };
 
   const handleResize = () => {
-    if (window.innerWidth < 768) {
-      setMenu(true);
-    } else {
-      setMenu(false);
-    }
+    // if (window.innerWidth < 768) {
+    //   setShowMenu(true);
+    // } else {
+    //   setShowMenu(false);
+    // }
+    setShowMenu(window.innerWidth < 768);
   };
 
   const debouncedHandleScroll = debounce(handleScroll, 100);
   const debouncedHandleResize = debounce(handleResize, 100);
 
   useEffect(() => {
+    handleResize();
     window.addEventListener('scroll', debouncedHandleScroll, { passive: true });
     window.addEventListener('resize', debouncedHandleResize);
 
