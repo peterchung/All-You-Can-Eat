@@ -44,7 +44,7 @@ const SlidingImage = ({ images, index }: imageAppProps & { index: number }) => {
         style={{ height: '602px', width: '285px' }}
       >
         <div
-          className={`absolute inset-0 transition-transform duration-500 ease-in-out ${
+          className={`absolute inset-0 bg-gray-100 shadow-lg transition-transform duration-500 ease-in-out ${
             showText ? '-translate-x-full' : 'translate-x-0'
           }`}
         >
