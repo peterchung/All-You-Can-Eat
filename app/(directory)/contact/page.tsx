@@ -1,5 +1,5 @@
-import DirectoryHeader from '@/app/components/DirectoryHeader';
-import ContactForm from '@/app/components/ContactForm';
+import DirectoryHeader from '@/app/component/DirectoryHeader';
+import ContactForm from '@/app/component/ContactForm';
 import Image from 'next/image';
 import { client, urlFor } from '@/app/lib/sanity';
 

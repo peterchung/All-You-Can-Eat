@@ -1,5 +1,5 @@
-import DirectoryHeader from '@/app/components/DirectoryHeader';
-import MarqueeText from '@/app/components/MarqueeText';
+import DirectoryHeader from '@/app/component/DirectoryHeader';
+import MarqueeText from '@/app/component/MarqueeText';
 
 export default function Meetups() {
   return (

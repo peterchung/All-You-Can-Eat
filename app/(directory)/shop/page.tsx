@@ -1,5 +1,5 @@
-import DirectoryHeader from '@/app/components/DirectoryHeader';
-import Products from '@/app/components/Products';
+import DirectoryHeader from '@/app/component/DirectoryHeader';
+import Products from '@/app/component/Products';
 
 const Shop = () => {
   return (

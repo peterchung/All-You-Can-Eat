@@ -1,5 +1,5 @@
-import DirectoryHeader from '@/app/components/DirectoryHeader';
-import SlidingImage from '@/app/components/SlideImage';
+import DirectoryHeader from '@/app/component/DirectoryHeader';
+import SlidingImage from '@/app/component/SlideImage';
 import { client, urlFor } from '@/app/lib/sanity';
 
 const getData = async () => {
