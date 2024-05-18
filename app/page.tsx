@@ -10,6 +10,7 @@ const getData = async () => {
 };
 
 //TODO: Add onclick to watch now directing to youtube, and onclick to apple, spotify, youtube buttons
+//TODO: DRY: Reduce lines of code for spotify, youtube, etc. and use map
 
 export const dynamic = 'force-dynamic';
 
@@ -36,8 +37,14 @@ export default async function Home() {
               <h3>a podcast about anything, really. sort of.</h3>
             </div>
             <div>
-              <button className='bg-gray-200 hover:opacity-50 font-bold text-black py-4 px-6 rounded-full uppercase'>
-                Watch now
+              <button className='bg-gray-200 hover:opacity-50 font-bold text-black py-4 px-6 rounded-full uppercase hover:cursor-pointer'>
+                <a
+                  href='https://www.youtube.com/@aycepod'
+                  target='_blank'
+                  rel='noopener'
+                >
+                  Watch now
+                </a>
               </button>
             </div>
           </div>
@@ -97,27 +104,41 @@ export default async function Home() {
             listen now on
           </h2>
           <div className='flex justify-between w-3/4'>
-            <div className='flex flex-col items-center'>
-              <div className='text-md md:text-2xl xl:text-3xl font-bold uppercase'>
-                spotify
-              </div>
-              <Image
-                src={urlFor(data.image4).url()}
-                alt='spotify'
-                width='50'
-                height='50'
-              />
+            <div className='hover-cursor-pointer'>
+              <a
+                href='https://podcasters.spotify.com/pod/show/all-you-can-eat0'
+                target='_blank'
+                rel='noopener'
+                className='flex flex-col items-center'
+              >
+                <div className='text-md md:text-2xl xl:text-3xl font-bold uppercase'>
+                  spotify
+                </div>
+                <Image
+                  src={urlFor(data.image4).url()}
+                  alt='spotify'
+                  width='50'
+                  height='50'
+                />
+              </a>
             </div>
-            <div className='flex flex-col items-center'>
-              <div className='text-md md:text-2xl xl:text-3xl font-bold uppercase'>
-                youtube
-              </div>
-              <Image
-                src={urlFor(data.image5).url()}
-                alt='youtube'
-                width='50'
-                height='50'
-              />
+            <div className='hover-cursor-pointer'>
+              <a
+                href='https://www.youtube.com/@aycepod'
+                target='_blank'
+                rel='noopener'
+                className='flex flex-col items-center'
+              >
+                <div className='text-md md:text-2xl xl:text-3xl font-bold uppercase'>
+                  youtube
+                </div>
+                <Image
+                  src={urlFor(data.image5).url()}
+                  alt='youtube'
+                  width='50'
+                  height='50'
+                />
+              </a>
             </div>
             <div className='flex flex-col items-center'>
               <div className='text-md md:text-2xl xl:text-3xl font-bold uppercase'>
