@@ -18,7 +18,7 @@ const SlidingImage = ({ images, index }: imageAppProps & { index: number }) => {
 
   const igHandle = [
     'https://www.instagram.com/golfmetric/',
-    'https://www.instagram.com/aznbbppl/',
+    'https://www.instagram.com/subaksora/',
     'https://www.instagram.com/pmc__life/',
   ];
 
