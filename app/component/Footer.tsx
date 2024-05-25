@@ -99,9 +99,13 @@ const Footer = ({ images }: imageAppProps): JSX.Element => {
               </a>
             </div>
             <div className='mr-4 hover:cursor-pointer'>
-              <a>
+              <a
+                href='https://www.tiktok.com/@aycepod'
+                target='_blank'
+                rel='noopener'
+              >
                 <Image
-                  src={urlFor(images.discord).url()}
+                  src={urlFor(images.tiktok).url()}
                   alt='tiktok'
                   width='36'
                   height='36'
@@ -109,28 +113,10 @@ const Footer = ({ images }: imageAppProps): JSX.Element => {
               </a>
             </div>
             <div className='mr-4 hover:cursor-pointer'>
-              <a
-                href='https://www.instagram.com/aycepod/'
-                target='_blank'
-                rel='noopener'
-              >
+              <a>
                 <Image
-                  src={urlFor(images.tiktok).url()}
-                  alt='instagram'
-                  width='36'
-                  height='36'
-                />
-              </a>
-            </div>
-            <div className='mr-4 hover:cursor-pointer'>
-              <a
-                href='https://twitter.com/aycepod'
-                target='_blank'
-                rel='noopener'
-              >
-                <Image
-                  src={urlFor(images.twitter).url()}
-                  alt='twitterx'
+                  src={urlFor(images.discord).url()}
+                  alt='discord'
                   width='36'
                   height='36'
                 />
