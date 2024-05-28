@@ -32,22 +32,23 @@ const ContactForm = () => {
   };
 
   return (
-    <div className='contact-form-wrapper flex flex-col items-center'>
-      <form onSubmit={handleSubmit(processForm)}>
-        <fieldset className='item-field flex gap-x-2.5 mb-4'>
+    <div className='contact-form-wrapper flex flex-col items-center w-full px-4'>
+      <form onSubmit={handleSubmit(processForm)} className='w-full'>
+        <fieldset className='item-field flex flex-col mb-4'>
           <legend className='pb-1'>
-            <div className='flex gap-x-2 text-black'>
-              <span className='text-lg font-medium'>Name</span>
-              <span className='text-lg'>(required)</span>
+            <div>
+              <span className='text-lg text-black font-medium'>
+                Name (required)
+              </span>
             </div>
           </legend>
-          <div className='first-name-wrapper flex flex-col'>
+          <div className='first-name-wrapper flex flex-col font-medium'>
             <label
               className={`${errors.firstName ? 'text-red-500' : 'text-black'}`}
             >
               First Name
             </label>
-            <div className='firstName-input w-full flex flex-col'>
+            <div className='firstName-input w-full flex flex-col pb-1'>
               <input
                 {...register('firstName')}
                 type='text'
@@ -64,7 +65,7 @@ const ContactForm = () => {
               )}
             </div>
           </div>
-          <div className='last-name-wrapper flex flex-col'>
+          <div className='last-name-wrapper flex flex-col font-medium'>
             <label
               className={`${errors.lastName ? 'text-red-500' : 'text-black'}`}
             >
@@ -88,9 +89,9 @@ const ContactForm = () => {
             </div>
           </div>
         </fieldset>
-        <fieldset className='item-field flex gap-x-2.5 mb-4'>
+        <fieldset className='item-field flex flex-col gap-x-2.5 mb-4'>
           <legend className='pb-1'>
-            <label className='flex gap-x-2'>
+            <label>
               <span
                 className={`text-lg font-medium ${
                   errors.email ? 'text-red-500' : 'text-black'
@@ -117,9 +118,9 @@ const ContactForm = () => {
             )}
           </div>
         </fieldset>
-        <fieldset className='item-field flex gap-x-2.5 mb-4'>
+        <fieldset className='item-field flex flex-col mb-4'>
           <legend className='pb-1'>
-            <label className='flex gap-x-2'>
+            <label>
               <span
                 className={`text-lg font-medium ${
                   errors.subject ? 'text-red-500' : 'text-black'
@@ -146,9 +147,9 @@ const ContactForm = () => {
             )}
           </div>
         </fieldset>
-        <fieldset className='item-field flex gap-x-2.5 mb-4'>
+        <fieldset className='item-field flex flex-col mb-4'>
           <legend className='pb-1'>
-            <label className='flex gap-x-2'>
+            <label>
               <span
                 className={`text-lg font-medium ${
                   errors.message ? 'text-red-500' : 'text-black'
@@ -174,13 +175,15 @@ const ContactForm = () => {
             )}
           </div>
         </fieldset>
-        <button
-          type='submit'
-          disabled={isSubmitting}
-          className='w-full bg-primary font-bold text-white uppercase py-4 px-6 rounded hover:opacity-50'
-        >
-          {isSubmitting ? 'Submitting...' : 'Submit'}
-        </button>
+        <div className='flex justify-center'>
+          <button
+            type='submit'
+            disabled={isSubmitting}
+            className=' bg-primary font-bold text-white uppercase py-4 px-6 rounded hover:opacity-50'
+          >
+            {isSubmitting ? 'Submitting...' : 'Submit'}
+          </button>
+        </div>
       </form>
     </div>
   );
