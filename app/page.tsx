@@ -19,7 +19,7 @@ export default async function Home() {
 
   return (
     <main>
-      <section className='landing-page relative flex flex-col h-screen'>
+      <section className='landing-page relative flex flex-col h-screen overflow-hidden'>
         <div className='absolute inset-0'>
           <Image
             src={urlFor(data.image2).url()}
@@ -82,13 +82,13 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className='welcome-and-listen relative flex flex-col h-screen text-amber-300'>
-        <div className='absolute inset-0'>
+      {/* <section className='welcome-and-listen relative flex flex-col h-screen text-amber-300'>
+        <div className='absolute inset-0 rounded-lg'>
           <Image
             src={urlFor(data.image3).url()}
             alt='Landing Background'
             fill={true}
-            style={{ objectFit: 'cover', objectPosition: 'center' }}
+            style={{ objectFit: 'contain', objectPosition: 'center' }}
             priority
           />
         </div>
@@ -150,6 +150,82 @@ export default async function Home() {
                 width='50'
                 height='50'
               />
+            </div>
+          </div>
+        </div>
+      </section> */}
+
+      <section className='welcome-and-listen relative flex flex-col text-amber-300 mb-10'>
+        <div className='relative mx-auto'>
+          <div className='px-4'>
+            <Image
+              src={urlFor(data.image3).url()}
+              alt='Landing Background'
+              width={1600}
+              height={800}
+              className='rounded-lg'
+              priority
+            />
+            <div className='absolute top-0 left-0 right-0 p-2 sm:p-4 md:p-6 lg:p-10 z-10'>
+              <div className='flex flex-col items-center w-full'>
+                <h1 className='text-sm sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase text-center'>
+                  welcome to all you can eat
+                </h1>
+              </div>
+              <div className='flex flex-col items-center mt-2 sm:mt-4 md:mt-6 lg:mt-10'>
+                <h2 className='text-sm sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold uppercase mb-2 sm:mb-4 md:mb-6 lg:mb-10 text-center'>
+                  listen now on
+                </h2>
+                <div className='flex justify-center w-full'>
+                  <div className='hover-cursor-pointer mx-4'>
+                    <a
+                      href='https://podcasters.spotify.com/pod/show/all-you-can-eat0'
+                      target='_blank'
+                      rel='noopener'
+                      className='flex flex-col items-center'
+                    >
+                      <div className='text-sm md:text-2xl xl:text-3xl font-bold uppercase'>
+                        spotify
+                      </div>
+                      <Image
+                        src={urlFor(data.image4).url()}
+                        alt='spotify'
+                        width='50'
+                        height='50'
+                      />
+                    </a>
+                  </div>
+                  <div className='hover-cursor-pointer mx-4'>
+                    <a
+                      href='https://www.youtube.com/@aycepod'
+                      target='_blank'
+                      rel='noopener'
+                      className='flex flex-col items-center'
+                    >
+                      <div className='text-sm md:text-2xl xl:text-3xl font-bold uppercase'>
+                        youtube
+                      </div>
+                      <Image
+                        src={urlFor(data.image5).url()}
+                        alt='youtube'
+                        width='50'
+                        height='50'
+                      />
+                    </a>
+                  </div>
+                  <div className='flex flex-col items-center mx-4'>
+                    <div className='text-sm md:text-2xl xl:text-3xl font-bold uppercase'>
+                      apple
+                    </div>
+                    <Image
+                      src={urlFor(data.image6).url()}
+                      alt='apple podcast'
+                      width='50'
+                      height='50'
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
