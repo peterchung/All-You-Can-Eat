@@ -33,7 +33,7 @@ export default function MenuModal({ isOpen, handleClose }: menuModalProps) {
                 {pathname === link.href ? (
                   <button onClick={handleClose}>
                     <Link
-                      className='text-5xl font-bold text-amber-400'
+                      className='text-2xl sm:text-4xl font-bold text-amber-400'
                       href={link.href}
                     >
                       {link.name}
@@ -42,7 +42,7 @@ export default function MenuModal({ isOpen, handleClose }: menuModalProps) {
                 ) : (
                   <button onClick={handleClose}>
                     <Link
-                      className='text-5xl font-bold text-blue-900 transition duration-100 hover:text-sky-400'
+                      className='text-2xl sm:text-4xl font-bold text-blue-900 transition duration-100 hover:text-sky-400'
                       href={link.href}
                     >
                       {link.name}
@@ -52,7 +52,7 @@ export default function MenuModal({ isOpen, handleClose }: menuModalProps) {
               </div>
             ))}
             <button onClick={() => handleCartButtonClick()}>
-              <div className='flex text-5xl font-bold text-blue-900 uppercase transition duration-100 hover:text-sky-400'>
+              <div className='flex text-2xl sm:text-4xl font-bold text-blue-900 uppercase transition duration-100 hover:text-sky-400'>
                 Cart
               </div>
             </button>
