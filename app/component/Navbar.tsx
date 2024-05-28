@@ -10,29 +10,46 @@ import MenuModal from './MenuModal';
 import { imageAppProps } from '../types';
 import { urlFor } from '../lib/sanity';
 
-const links = [
+/**
+ * Array of navigation paths.
+ * Each path object contains a name and a corresponding href.
+ */
+const paths = [
   { name: 'THE TEAM', href: '/theteam' },
   { name: 'MEETUPS', href: '/meetups' },
   { name: 'CONTACT', href: '/contact' },
   { name: 'SHOP', href: '/shop' },
 ];
 
+// TODO: Is the window resize causing the image to zoom in and out on scroll?
+
+/**
+ * Debounce function to delay the execution of a function.
+ * @param func The function to debounce.
+ * @param delay The delay in milliseconds.
+ * @returns A debounced version of the function.
+ */
 const debounce = <T extends (...args: any[]) => any>(
   func: T,
-  wait: number
+  delay: number
 ): ((...args: any[]) => void) => {
-  let timeout: NodeJS.Timeout | undefined;
-  return function executedFunc(...args) {
-    const later = () => {
-      clearTimeout(timeout);
+  let timeoutId: NodeJS.Timeout | undefined;
+  return function debouncedFunc(...args) {
+    const executeFunc = () => {
+      clearTimeout(timeoutId);
       func(...args);
     };
 
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(executeFunc, delay);
   };
 };
 
+/**
+ * Navbar component.
+ * Renders a navigation bar with links, logo, and shopping cart functionality.
+ * @param {imageAppProps} images - The images object containing the logo image.
+ */
 export default function Navbar({ images }: imageAppProps) {
   const pathname = usePathname();
   const { handleCartClick } = useShoppingCart();
@@ -41,34 +58,31 @@ export default function Navbar({ images }: imageAppProps) {
   const [showMenu, setShowMenu] = useState(false);
   const [menuModalOpen, setMenuModalOpen] = useState(false);
 
-  const openMenuModal = () => {
-    setMenuModalOpen(true);
-  };
-
-  const closeMenuModal = () => {
-    setMenuModalOpen(false);
-  };
-
+  /**
+   * Handles the scroll event.
+   * Shows/hides the navbar based on the scroll direction and position.
+   * Updates the last scroll position
+   */
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
     if (currentScrollY < lastScrollY) {
-      setShowNav(true); // show the navbar when scrolling up
+      setShowNav(true);
     } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
-      setShowNav(false); // hide the navbar when scrolling down
+      setShowNav(false);
     }
-    setLastScrollY(currentScrollY); // update the last scroll position
-  };
-
-  const handleResize = () => {
-    // if (window.innerWidth < 768) {
-    //   setShowMenu(true);
-    // } else {
-    //   setShowMenu(false);
-    // }
-    setShowMenu(window.innerWidth < 768);
+    setLastScrollY(currentScrollY);
   };
 
   const debouncedHandleScroll = debounce(handleScroll, 100);
+
+  /**
+   * Handles the window resize event.
+   * Shows/hides the hamburger menu based on the window width.
+   */
+  const handleResize = () => {
+    setShowMenu(window.innerWidth < 768);
+  };
+
   const debouncedHandleResize = debounce(handleResize, 100);
 
   useEffect(() => {
@@ -87,6 +101,20 @@ export default function Navbar({ images }: imageAppProps) {
     // Since debounceHandleScroll wraps handleScroll, it needs to be updated as well to incorporate the latest handleScroll function. Otherwise the old handleScroll with the last state lastScrollY could be used leading to wrong behavior
   }, [lastScrollY, debouncedHandleScroll, showMenu, debouncedHandleResize]);
 
+  /**
+   * Opens the menu modal.
+   */
+  const openMenuModal = () => {
+    setMenuModalOpen(true);
+  };
+
+  /**
+   * Closes the menu modal.
+   */
+  const closeMenuModal = () => {
+    setMenuModalOpen(false);
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 w-full transition-transform duration-300 ease-in-out z-50 ${
@@ -104,21 +132,21 @@ export default function Navbar({ images }: imageAppProps) {
         </Link>
         <div className='flex'>
           <nav className='hidden gap-12 md:flex 2xl:ml-16 font-bold'>
-            {links.map((link, idx) => (
+            {paths.map((path, idx) => (
               <div key={idx}>
-                {pathname === link.href ? (
+                {pathname === path.href ? (
                   <Link
                     className='text-lg font-bold text-amber-400'
-                    href={link.href}
+                    href={path.href}
                   >
-                    {link.name}
+                    {path.name}
                   </Link>
                 ) : (
                   <Link
                     className='text-lg font-bold text-blue-900 transition duration-100 hover:text-sky-400'
-                    href={link.href}
+                    href={path.href}
                   >
-                    {link.name}
+                    {path.name}
                   </Link>
                 )}
               </div>
