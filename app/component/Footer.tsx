@@ -65,7 +65,7 @@ const Footer = ({ images }: imageAppProps): JSX.Element => {
               lineHeight: '1.25',
             }}
           >
-            Peter and Sora
+            Peter and Sara
           </p>
         </div>
         <div className='py-4'>
